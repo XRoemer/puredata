@@ -1,0 +1,17 @@
+#N canvas 561 263 620 191 10;
+#X floatatom 256 78 5 0 0 0 - - -, f 5;
+#X floatatom 497 71 12 0 0 0 - - -, f 12;
+#X obj 17 99 expr exp( -0.5 * (pow( ($f3 * ($f1 - ($f2 / 2)) / ($f2
+/ 2)) \, 2))), f 69;
+#X obj 498 48 euler;
+#X obj 17 46 inlet;
+#X obj 498 17 loadbang;
+#X obj 256 37 inlet;
+#X obj 17 147 outlet;
+#X connect 0 0 2 1;
+#X connect 1 0 2 2;
+#X connect 2 0 7 0;
+#X connect 3 0 1 0;
+#X connect 4 0 2 0;
+#X connect 5 0 3 0;
+#X connect 6 0 0 0;
