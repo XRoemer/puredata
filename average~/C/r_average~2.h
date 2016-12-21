@@ -26,6 +26,8 @@ void average_tilde_free (t_average_tilde *x)
 	if (x->matrix) free(x->matrix);
 	// Deallocate vector
 	if (x->vector) free(x->vector);
+	// Deallocate avg
+	if (x->avg) free(x->avg);
 }
 
 t_int *average_tilde_perform(t_int *w)
