@@ -59,10 +59,26 @@ t_int *average_tilde_perform(t_int *w)
 	return (w + 5);
 }
 
-void resize_avg_array(t_average_tilde *x, t_int len_avg_new)
+void average_resize_avg(t_average_tilde *x) {
+
+	t_sample *temp_avg = NULL;
+
+	// Allocate avg-array
+	temp_avg = realloc(temp_avg, x->block_size * sizeof(t_sample));
+
+	if (temp_avg) {
+		// Initialize the element(s)
+		for (int i = 0; i < x->block_size; i++)
+			temp_avg[i] = 0.0;
+	}
+
+	if (x->avg) free(x->avg);
+	x->avg = temp_avg;
+}
+
+void average_resize_matrix(t_average_tilde *x, t_int len_avg_new)
 {
 	int i,j;
-	average_tilde_free(x);
 
 	t_sample *temp_vector = NULL;
 	t_sample **temp_matrix = NULL;
@@ -75,30 +91,41 @@ void resize_avg_array(t_average_tilde *x, t_int len_avg_new)
 		temp_matrix = realloc(temp_matrix, len_avg_new * sizeof(t_sample*));
 
 		if (temp_matrix) {
-			x->vector = temp_vector;
-			x->matrix = temp_matrix;
-			x->row = 0;
-			x->len_avg = len_avg_new;
-
 			for (int i = 0; i < len_avg_new; i++) {
-				x->matrix[i] = x->vector + i * x->block_size;
+				temp_matrix[i] = temp_vector + i * x->block_size;
 				for (int j = 0; j < x->block_size; j++) {
-					x->matrix[i][j]   = 0.0;
+					temp_matrix[i][j] = 0.0;
 				}
 			}
 		}
 		else {
 			free(temp_matrix);
 			free(temp_vector);
-			x->vector = NULL;
-			x->matrix = NULL;
-			pd_error(x, "allocation failed");
+			temp_vector = NULL;
+			temp_matrix = NULL;
 		}
 	}
 
 	else {
 		free(temp_vector);
-		x->vector = NULL;
+		temp_vector = NULL;
+	}
+
+	if (x->matrix) free(x->matrix);
+	if (x->vector) free(x->vector);
+	x->vector = temp_vector;
+	x->matrix = temp_matrix;
+}
+
+void average_resize_arrays(t_average_tilde *x, t_floatarg f) {
+
+	x->row = 0;
+	x->len_avg = f;
+
+	average_resize_avg(x, f);
+	average_resize_matrix(x, f);
+
+	if (!x->avg && !x->matrix) {
 		x->matrix = NULL;
 		pd_error(x, "allocation failed");
 	}
@@ -106,12 +133,10 @@ void resize_avg_array(t_average_tilde *x, t_int len_avg_new)
 
 void average_tilde_dsp(t_average_tilde *x, t_signal **sp)
 {	
-	x->block_size = sp[0]->s_n;
-
-	float arr_size = sizeof(x->matrix) / sizeof(x->matrix[0][0]);
-
-	if (x->block_size * x->len_avg != arr_size)
-		resize_avg_array(x, 10);
+	if (x->block_size != sp[0]->s_n) {
+		x->block_size = sp[0]->s_n;
+		average_resize_arrays(x, x->len_avg);
+	}
 
 	dsp_add(average_tilde_perform, 4, 
 		x,
@@ -120,37 +145,27 @@ void average_tilde_dsp(t_average_tilde *x, t_signal **sp)
 		sp[0]->s_n);	
 }
 
-void set_len_avg(t_average_tilde *x, t_floatarg f)
+void average_set_len_avg(t_average_tilde *x, t_floatarg f)
 {
 	if ((int)f > 0) {
-		resize_avg_array(x, f);
+		average_resize_arrays(x, f);
 	}
 }
 
-void init_arrays(t_average_tilde *x, t_floatarg f)
+void average_init_arrays(t_average_tilde *x, t_floatarg f)
 {	
 	// initialize values with defaults
 	x->len_avg = ((int)f > 0) ? (int)f : 10;
 	x->block_size = 64;
 	x->row = 0;
-
-	resize_avg_array(x, x->len_avg);
-
-	for (int n = 0; n < x->len_avg; n++)
-		for (int m = 0; m < x->block_size; m++)
-			x->matrix[n][m] = 0.0;
-
-	// Initialize average-array
-	x->avg = realloc(x->avg, x->block_size * sizeof(t_sample));
-	for (int i = 0; i < x->block_size; i++)
-		x->avg[i] = 0.0;
+	average_resize_arrays(x, x->len_avg);
 }
 
 void *average_tilde_new(t_floatarg f)
 {
 	t_average_tilde *x = (t_average_tilde *)pd_new(average_tilde_class);
 
-	init_arrays(x, f);
+	average_init_arrays(x, f);
 	x->x_out = outlet_new(&x->x_obj, &s_signal);
 
 	return (void *)x;
@@ -167,6 +182,6 @@ void init_average(void) {
 	class_addmethod(average_tilde_class,
 		(t_method)average_tilde_dsp, gensym("dsp"), 0);
 	CLASS_MAINSIGNALIN(average_tilde_class, t_average_tilde, len_avg);
-	class_addfloat(average_tilde_class, set_len_avg);
+	class_addfloat(average_tilde_class, average_set_len_avg);
 }
 #endif  // AVERAGE_H_
