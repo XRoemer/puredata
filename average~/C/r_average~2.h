@@ -127,8 +127,11 @@ void average_resize_arrays(t_average_tilde *x, t_floatarg f) {
 	average_resize_avg(x, f);
 	average_resize_matrix(x, f);
 
-	if (!x->avg && !x->matrix) {
+	if (!x->avg || !x->matrix) {
+		if (x->matrix) free(x->matrix);
+		if (x->vector) free(x->vector);
 		x->matrix = NULL;
+		x->vector = NULL;
 		pd_error(x, "allocation failed");
 	}
 }
@@ -150,7 +153,7 @@ void average_tilde_dsp(t_average_tilde *x, t_signal **sp)
 void average_set_len_avg(t_average_tilde *x, t_floatarg f)
 {
 	if ((int)f > 0) {
-		average_resize_arrays(x, f);
+		average_resize_arrays(x, (int)f);
 	}
 }
 
@@ -160,6 +163,8 @@ void average_init_arrays(t_average_tilde *x, t_floatarg f)
 	x->len_avg = ((int)f > 0) ? (int)f : 10;
 	x->block_size = 64;
 	x->row = 0;
+	x->matrix = NULL;
+	x->vector = NULL;
 	average_resize_arrays(x, x->len_avg);
 }
 
