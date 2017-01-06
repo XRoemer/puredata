@@ -63,10 +63,10 @@ t_int *average_tilde_perform(t_int *w)
 
 void average_resize_avg(t_average_tilde *x) {
 
-	t_sample *temp_avg = NULL;
+	t_sample *temp_avg;
 
 	// Allocate avg-array
-	temp_avg = realloc(temp_avg, x->block_size * sizeof(t_sample));
+	temp_avg = malloc(x->block_size * sizeof(t_sample));
 
 	if (temp_avg) {
 		// Initialize the element(s)
@@ -82,15 +82,15 @@ void average_resize_matrix(t_average_tilde *x, t_int len_avg_new)
 {
 	int i,j;
 
-	t_sample *temp_vector = NULL;
-	t_sample **temp_matrix = NULL;
+	t_sample *temp_vector;
+	t_sample **temp_matrix;
 
 	// Allocate the vector
-	temp_vector = realloc(temp_vector, len_avg_new * x->block_size * sizeof(t_sample*));
+	temp_vector = malloc(len_avg_new * x->block_size * sizeof(t_sample*));
 
 	if (temp_vector) {
 		// Allocate the matrix
-		temp_matrix = realloc(temp_matrix, len_avg_new * sizeof(t_sample*));
+		temp_matrix = malloc(len_avg_new * sizeof(t_sample*));
 
 		if (temp_matrix) {
 			for (int i = 0; i < len_avg_new; i++) {
@@ -166,6 +166,7 @@ void average_init_arrays(t_average_tilde *x, t_floatarg f)
 	x->matrix = NULL;
 	x->vector = NULL;
 	average_resize_arrays(x, x->len_avg);
+	post("hier");
 }
 
 void *average_tilde_new(t_floatarg f)
