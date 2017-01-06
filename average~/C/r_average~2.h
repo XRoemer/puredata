@@ -166,7 +166,6 @@ void average_init_arrays(t_average_tilde *x, t_floatarg f)
 	x->matrix = NULL;
 	x->vector = NULL;
 	average_resize_arrays(x, x->len_avg);
-	post("hier");
 }
 
 void *average_tilde_new(t_floatarg f)
