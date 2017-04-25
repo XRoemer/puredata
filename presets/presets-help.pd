@@ -1,0 +1,174 @@
+#N canvas 2568 101 557 630 10;
+#X obj 176 1 presets;
+#X obj 2 543 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
+14 -228856 -66577 0;
+#X obj 2 -59 cnv 15 552 40 empty empty presets 3 12 0 18 -204280 -1
+0;
+#X obj 2 135 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0 13
+-228856 -1 0;
+#N canvas 468 344 363 263 META 0;
+#X text 12 43 LICENSE SIBSD;
+#X text 12 61 DESCRIPTION save and recall presets;
+#X text 12 79 INLET_0 lists;
+#X text 12 97 INLET_1 symbol (plus argument);
+#X text 12 169 AUTHOR Xaver Römer;
+#X text 12 187 WEBSITE https://github.com/XRoemer/puredata;
+#X text 12 205 RELEASE_DATE 2017;
+#X text 12 115 OUTLET_0 lists;
+#X text 12 25 KEYWORDS presets;
+#X text 12 133 OUTLET_1 bang;
+#X text 12 151 OUTLET_2 bang;
+#X restore 502 545 pd META;
+#X obj 2 281 cnv 3 550 3 empty \$0-pddp.cnv.outlets outlets 8 12 0
+13 -228856 -1 0;
+#X obj 2 405 cnv 3 550 3 empty \$0-pddp.cnv.argument arguments 8 12
+0 13 -228856 -1 0;
+#X obj 2 448 cnv 3 550 3 empty \$0-pddp.cnv.more_info more_info 8 12
+0 13 -228856 -1 0;
+#X obj 80 290 cnv 17 3 17 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
+-162280 0;
+#X obj 80 144 cnv 17 3 35 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
+-162280 0;
+#X obj 80 186 cnv 17 3 74 empty \$0-pddp.cnv.let.1 1 5 9 0 16 -228856
+-162280 0;
+#X text 100 184 symbol;
+#X obj 6 545 pddp/pddplink all_about_help_patches.pd -text Usage Guide
+;
+#X text 13 -36 save and recall presets;
+#X text 100 142 lists;
+#X text 170 142 - inlet for lists to be written to a preset when write
+or copy is used.;
+#X text 170 183 - inlet for remote or programmatic control. Keywords
+are nr \, write_to_preset \, copy_preset \, load_preset \, preset-name
+and textfile;
+#X text 170 248 preset-name and textfile need symbol as second argument.
+textfile should end on .txt;
+#X text 92 411 (none);
+#X obj 80 320 cnv 17 3 17 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
+-162280 0;
+#X obj 80 355 cnv 17 3 17 empty \$0-pddp.cnv.let.0 2 5 9 0 16 -228856
+-162280 0;
+#X text 100 354 bang;
+#X text 170 354 - sends bang on preset change before any other action.
+;
+#X text 100 289 lists;
+#X text 170 289 - outlets lists on preset change;
+#X text 100 319 bang;
+#X text 169 319 - sends a bang for getting the lists and values for
+the current preset.;
+#X text 170 223 nr needs float as second argument. Sets bank and preset
+(0 - 49);
+#N canvas 429 256 700 479 example 0;
+#X obj 201 224 presets;
+#X msg 423 178 load_preset;
+#X obj 423 134 t b b;
+#X msg 450 158 textfile test_preset.txt;
+#X obj 423 111 loadbang;
+#N canvas 764 276 853 529 some 0;
+#X floatatom 156 249 5 0 0 0 - - -, f 5;
+#X obj 156 272 list prepend x;
+#X floatatom 193 249 5 0 0 0 - - -, f 5;
+#X floatatom 231 249 5 0 0 0 - - -, f 5;
+#X obj 193 292 list prepend y;
+#X obj 231 314 list prepend z;
+#X obj 194 352 list prepend xyz;
+#X floatatom 287 249 5 0 0 0 - - -, f 5;
+#X floatatom 328 249 5 0 0 0 - - -, f 5;
+#X floatatom 366 249 5 0 0 0 - - -, f 5;
+#X obj 328 353 list prepend abc;
+#X obj 287 272 list prepend a;
+#X obj 328 294 list prepend b;
+#X obj 366 314 list prepend c;
+#X obj 280 422 list trim;
+#X obj 156 113 route xyz abc;
+#X obj 156 139 route x y z;
+#X obj 287 143 route a b c;
+#X obj 475 211 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 280 462 outlet;
+#X msg 156 207 set \$1;
+#X msg 193 186 set \$1;
+#X msg 232 207 set \$1;
+#X msg 287 209 set \$1;
+#X msg 328 187 set \$1;
+#X msg 366 207 set \$1;
+#X obj 156 26 inlet set;
+#X obj 475 27 inlet get;
+#X text 528 80 Two methods are needed: A setter and a getter, f 23
+;
+#X text 528 194 SETTER: route incoming lists back to the values;
+#X text 528 144;
+#X text 528 120 GETTER: presets need to get values on writing and copying.
+Every value needs a description (prepended symbol) to be able to route
+its value on setting., f 38;
+#X text 540 212 ATTENTION: don't forget to use [set( for the setter
+otherwise you might cause a stack overflow, f 29;
+#X connect 0 0 1 0;
+#X connect 1 0 6 0;
+#X connect 2 0 4 0;
+#X connect 3 0 5 0;
+#X connect 4 0 6 0;
+#X connect 5 0 6 0;
+#X connect 6 0 14 0;
+#X connect 7 0 11 0;
+#X connect 8 0 12 0;
+#X connect 9 0 13 0;
+#X connect 10 0 14 0;
+#X connect 11 0 10 0;
+#X connect 12 0 10 0;
+#X connect 13 0 10 0;
+#X connect 14 0 19 0;
+#X connect 15 0 16 0;
+#X connect 15 1 17 0;
+#X connect 16 0 20 0;
+#X connect 16 1 21 0;
+#X connect 16 2 22 0;
+#X connect 17 0 23 0;
+#X connect 17 1 24 0;
+#X connect 17 2 25 0;
+#X connect 18 0 0 0;
+#X connect 18 0 2 0;
+#X connect 18 0 3 0;
+#X connect 18 0 7 0;
+#X connect 18 0 8 0;
+#X connect 18 0 9 0;
+#X connect 20 0 0 0;
+#X connect 21 0 2 0;
+#X connect 22 0 3 0;
+#X connect 23 0 7 0;
+#X connect 24 0 8 0;
+#X connect 25 0 9 0;
+#X connect 26 0 15 0;
+#X connect 27 0 18 0;
+#X coords 0 -1 1 1 261 37 1 148 232;
+#X restore 152 341 pd some values;
+#X msg 510 227 preset-name double_u;
+#X text 53 31 1) set some values and press write;
+#X text 53 51 2) change preset \, set some values and press write again
+;
+#X text 53 71 3) change between the written presets;
+#X text 47 123 copy/paste;
+#X text 47 144 Copy a preset you have set \, choose another preset
+\, press paste. Values will be shown after pressing the preset again.
+New values aren't stored to disk unless you press write., f 48;
+#X text 152 385 look into pd some values for more info;
+#X msg 510 254 nr 9;
+#X msg 510 281 write_to_preset;
+#X msg 510 308 copy_preset;
+#X msg 510 335 paste_preset;
+#X connect 0 0 5 0;
+#X connect 0 1 5 1;
+#X connect 1 0 0 1;
+#X connect 2 0 1 0;
+#X connect 2 1 3 0;
+#X connect 3 0 0 1;
+#X connect 4 0 2 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 1;
+#X connect 13 0 0 1;
+#X connect 14 0 0 1;
+#X connect 15 0 0 1;
+#X connect 16 0 0 1;
+#X restore 92 481 pd example;
+#X text 91 506 presets uses filexist for handling files. filexist was
+written by leopold frey;

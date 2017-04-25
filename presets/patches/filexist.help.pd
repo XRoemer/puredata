@@ -1,0 +1,18 @@
+#N canvas 612 201 606 247 10;
+#X obj 151 101 filexist;
+#X obj 151 127 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 257 153 null;
+#X msg 128 26 symbol imnotthere;
+#X msg 151 51 symbol hair_sample.wav;
+#X msg 170 74 symbol /Users/leo/Music/samples/divers/bubble.wav;
+#X text 315 212 leopold.frey@free.fr;
+#X text 140 182 reports existence and complete path of a file;
+#X obj 257 126 list prepend set;
+#X obj 213 141 print;
+#X connect 0 0 1 0;
+#X connect 0 1 9 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X connect 8 0 2 0;
