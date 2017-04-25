@@ -2,7 +2,9 @@
 
 Write and recall presets to and from file.
 
-At the moment usage is limited to Purr Data and windows
+Usage: Download this folder and start presets-help.pd
+
+At the moment usage is limited to Purr Data and Windows
  
 
 ![alt tag](presets.png)
