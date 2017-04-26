@@ -57,7 +57,7 @@ textfile should end on .txt;
 the current preset.;
 #X text 169 284 nr needs float as second argument. Sets bank and preset
 (0 - 49);
-#N canvas 377 72 769 547 example 0;
+#N canvas 377 72 772 470 example 1;
 #X msg 423 178 load_preset;
 #X obj 423 130 t b b;
 #X msg 450 158 textfile test_preset.txt;
@@ -139,7 +139,7 @@ otherwise you might cause a stack overflow, f 29;
 #X connect 27 0 18 0;
 #X coords 0 -1 1 1 261 37 1 148 232;
 #X restore 152 341 pd some values;
-#X msg 510 227 preset-name double_u;
+#X msg 510 274 preset-name double_u;
 #X text 53 31 1) set some values and press write;
 #X text 53 51 2) change preset \, set some values and press write again
 ;
@@ -149,14 +149,16 @@ otherwise you might cause a stack overflow, f 29;
 \, press paste. Values will be shown after pressing the preset again.
 New values aren't stored to disk unless you press write., f 48;
 #X text 152 385 look into pd some values for more info;
-#X msg 510 254 nr 9;
-#X msg 510 281 write_to_preset;
-#X msg 510 308 copy_preset;
-#X msg 510 335 paste_preset;
+#X msg 510 301 nr 9;
+#X msg 510 328 write_to_preset;
+#X msg 510 355 copy_preset;
+#X msg 510 382 paste_preset;
 #X obj 423 107 pipe 20;
 #X text 502 80 A loadbang needs to be delayed to make shure \, all
 objects have been initialized already, f 33;
 #X obj 193 224 presets;
+#X text 476 206 To load a new preset file create an empty textfile
+inside the presets folder on disk first, f 36;
 #X connect 0 0 18 1;
 #X connect 1 0 0 0;
 #X connect 1 1 2 0;
@@ -171,7 +173,5 @@ objects have been initialized already, f 33;
 #X connect 16 0 1 0;
 #X connect 18 0 4 0;
 #X connect 18 1 4 1;
-#X restore 91 542 pd example;
-#X text 90 567 presets uses filexist for handling files. filexist was
-written by leopold frey;
+#X restore 245 555 pd example;
 #X obj 187 73 presets;
