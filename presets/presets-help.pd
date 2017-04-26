@@ -1,10 +1,9 @@
-#N canvas 2568 101 557 630 10;
-#X obj 176 1 presets;
-#X obj 2 543 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
+#N canvas 639 130 601 642 10;
+#X obj 1 604 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
 14 -228856 -66577 0;
-#X obj 2 -59 cnv 15 552 40 empty empty presets 3 12 0 18 -204280 -1
-0;
-#X obj 2 135 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0 13
+#X obj 1 2 cnv 15 552 40 empty empty presets 3 12 0 18 -204280 -1 0
+;
+#X obj 1 196 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0 13
 -228856 -1 0;
 #N canvas 468 344 363 263 META 0;
 #X text 12 43 LICENSE SIBSD;
@@ -18,53 +17,52 @@
 #X text 12 25 KEYWORDS presets;
 #X text 12 133 OUTLET_1 bang;
 #X text 12 151 OUTLET_2 bang;
-#X restore 502 545 pd META;
-#X obj 2 281 cnv 3 550 3 empty \$0-pddp.cnv.outlets outlets 8 12 0
+#X restore 501 606 pd META;
+#X obj 1 342 cnv 3 550 3 empty \$0-pddp.cnv.outlets outlets 8 12 0
 13 -228856 -1 0;
-#X obj 2 405 cnv 3 550 3 empty \$0-pddp.cnv.argument arguments 8 12
+#X obj 1 466 cnv 3 550 3 empty \$0-pddp.cnv.argument arguments 8 12
 0 13 -228856 -1 0;
-#X obj 2 448 cnv 3 550 3 empty \$0-pddp.cnv.more_info more_info 8 12
+#X obj 1 509 cnv 3 550 3 empty \$0-pddp.cnv.more_info more_info 8 12
 0 13 -228856 -1 0;
-#X obj 80 290 cnv 17 3 17 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
+#X obj 79 351 cnv 17 3 17 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
 -162280 0;
-#X obj 80 144 cnv 17 3 35 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
+#X obj 79 205 cnv 17 3 35 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
 -162280 0;
-#X obj 80 186 cnv 17 3 74 empty \$0-pddp.cnv.let.1 1 5 9 0 16 -228856
+#X obj 79 247 cnv 17 3 74 empty \$0-pddp.cnv.let.1 1 5 9 0 16 -228856
 -162280 0;
-#X text 100 184 symbol;
-#X obj 6 545 pddp/pddplink all_about_help_patches.pd -text Usage Guide
+#X text 99 245 symbol;
+#X obj 5 606 pddp/pddplink all_about_help_patches.pd -text Usage Guide
 ;
-#X text 13 -36 save and recall presets;
-#X text 100 142 lists;
-#X text 170 142 - inlet for lists to be written to a preset when write
+#X text 12 25 save and recall presets;
+#X text 99 203 lists;
+#X text 169 203 - inlet for lists to be written to a preset when write
 or copy is used.;
-#X text 170 183 - inlet for remote or programmatic control. Keywords
+#X text 169 244 - inlet for remote or programmatic control. Keywords
 are nr \, write_to_preset \, copy_preset \, load_preset \, preset-name
 and textfile;
-#X text 170 248 preset-name and textfile need symbol as second argument.
+#X text 169 309 preset-name and textfile need symbol as second argument.
 textfile should end on .txt;
-#X text 92 411 (none);
-#X obj 80 320 cnv 17 3 17 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
+#X text 91 472 (none);
+#X obj 79 381 cnv 17 3 17 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
 -162280 0;
-#X obj 80 355 cnv 17 3 17 empty \$0-pddp.cnv.let.0 2 5 9 0 16 -228856
+#X obj 79 416 cnv 17 3 17 empty \$0-pddp.cnv.let.0 2 5 9 0 16 -228856
 -162280 0;
-#X text 100 354 bang;
-#X text 170 354 - sends bang on preset change before any other action.
+#X text 99 415 bang;
+#X text 169 415 - sends bang on preset change before any other action.
 ;
-#X text 100 289 lists;
-#X text 170 289 - outlets lists on preset change;
-#X text 100 319 bang;
-#X text 169 319 - sends a bang for getting the lists and values for
+#X text 99 350 lists;
+#X text 169 350 - outlets lists on preset change;
+#X text 99 380 bang;
+#X text 168 380 - sends a bang for getting the lists and values for
 the current preset.;
-#X text 170 223 nr needs float as second argument. Sets bank and preset
+#X text 169 284 nr needs float as second argument. Sets bank and preset
 (0 - 49);
-#N canvas 429 256 700 479 example 0;
-#X obj 201 224 presets;
+#N canvas 377 72 769 547 example 0;
 #X msg 423 178 load_preset;
-#X obj 423 134 t b b;
+#X obj 423 130 t b b;
 #X msg 450 158 textfile test_preset.txt;
-#X obj 423 111 loadbang;
-#N canvas 764 276 853 529 some 0;
+#X obj 423 84 loadbang;
+#N canvas 1038 215 853 529 some 0;
 #X floatatom 156 249 5 0 0 0 - - -, f 5;
 #X obj 156 272 list prepend x;
 #X floatatom 193 249 5 0 0 0 - - -, f 5;
@@ -97,8 +95,7 @@ the current preset.;
 #X text 528 80 Two methods are needed: A setter and a getter, f 23
 ;
 #X text 528 194 SETTER: route incoming lists back to the values;
-#X text 528 144;
-#X text 528 120 GETTER: presets need to get values on writing and copying.
+#X text 527 124 GETTER: presets need to get values on writing and copying.
 Every value needs a description (prepended symbol) to be able to route
 its value on setting., f 38;
 #X text 540 212 ATTENTION: don't forget to use [set( for the setter
@@ -156,19 +153,25 @@ New values aren't stored to disk unless you press write., f 48;
 #X msg 510 281 write_to_preset;
 #X msg 510 308 copy_preset;
 #X msg 510 335 paste_preset;
-#X connect 0 0 5 0;
-#X connect 0 1 5 1;
-#X connect 1 0 0 1;
-#X connect 2 0 1 0;
-#X connect 2 1 3 0;
-#X connect 3 0 0 1;
-#X connect 4 0 2 0;
-#X connect 5 0 0 0;
-#X connect 6 0 0 1;
-#X connect 13 0 0 1;
-#X connect 14 0 0 1;
-#X connect 15 0 0 1;
-#X connect 16 0 0 1;
-#X restore 92 481 pd example;
-#X text 91 506 presets uses filexist for handling files. filexist was
+#X obj 423 107 pipe 20;
+#X text 502 80 A loadbang needs to be delayed to make shure \, all
+objects have been initialized already, f 33;
+#X obj 193 224 presets;
+#X connect 0 0 18 1;
+#X connect 1 0 0 0;
+#X connect 1 1 2 0;
+#X connect 2 0 18 1;
+#X connect 3 0 16 0;
+#X connect 4 0 18 0;
+#X connect 5 0 18 1;
+#X connect 12 0 18 1;
+#X connect 13 0 18 1;
+#X connect 14 0 18 1;
+#X connect 15 0 18 1;
+#X connect 16 0 1 0;
+#X connect 18 0 4 0;
+#X connect 18 1 4 1;
+#X restore 91 542 pd example;
+#X text 90 567 presets uses filexist for handling files. filexist was
 written by leopold frey;
+#X obj 187 73 presets;
