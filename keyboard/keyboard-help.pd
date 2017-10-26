@@ -1,0 +1,67 @@
+#N struct tasteW float col float col2 float str float x float y float
+x0 float y0 float x1 float y1 float x2 float y2 float x3 float y3 float
+x4 float y4 float x5 float y5 float x6 float y6 float x7 float y7;
+#N struct tasteS float x float y float w float h float col float col2
+;
+#N canvas 681 58 906 730 10;
+#X obj 1 624 cnv 15 882 21 empty \$0-pddp.cnv.footer empty 20 12 0
+14 -228856 -66577 0;
+#X obj 1 2 cnv 15 882 46 empty empty keyboard 3 12 0 18 -204280 -1
+0;
+#X obj 1 216 cnv 3 882 3 empty \$0-pddp.cnv.inlets inlets 8 12 0 13
+-228856 -1 0;
+#N canvas 468 344 363 263 META 0;
+#X text 12 43 LICENSE SIBSD;
+#X text 12 61 DESCRIPTION save and recall presets;
+#X text 12 79 INLET_0 lists;
+#X text 12 97 INLET_1 symbol (plus argument);
+#X text 12 169 AUTHOR Xaver Römer;
+#X text 12 187 WEBSITE https://github.com/XRoemer/puredata;
+#X text 12 205 RELEASE_DATE 2017;
+#X text 12 115 OUTLET_0 lists;
+#X text 12 25 KEYWORDS presets;
+#X text 12 133 OUTLET_1 bang;
+#X text 12 151 OUTLET_2 bang;
+#X restore 501 626 pd META;
+#X obj 1 289 cnv 3 882 3 empty \$0-pddp.cnv.outlets outlets 8 12 0
+13 -228856 -1 0;
+#X obj 1 363 cnv 3 882 3 empty \$0-pddp.cnv.argument arguments 8 12
+0 13 -228856 -1 0;
+#X obj 1 406 cnv 3 882 3 empty \$0-pddp.cnv.more_info more_info 8 12
+0 13 -228856 -1 0;
+#X obj 79 298 cnv 17 3 17 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
+-162280 0;
+#X obj 79 225 cnv 17 3 35 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
+-162280 0;
+#X obj 5 626 pddp/pddplink all_about_help_patches.pd -text Usage Guide
+;
+#X text 99 223 lists;
+#X text 91 369 (none);
+#X obj 79 328 cnv 17 3 17 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
+-162280 0;
+#N canvas 377 72 772 470 example 0;
+#X text 355 210 missing;
+#X restore 351 670 pd example;
+#X text 12 24 styleable keyboard for input and output;
+#X obj 15 59 keyboard;
+#X text 99 297 int;
+#X text 169 297 - outlets integers of clicked notes;
+#X text 99 327 lists;
+#X text 168 327 - outlets lists of notes played on computer keyboard.
+;
+#X text 169 223 - inlet for lists of midi notes ( i i ). First integer
+is for the note to be played \, starting at 0 for the lowest c on the
+keyboaard. Second integer is for note on (1) or off (0).;
+#X text 164 432 - refresh: refresh design when you change anything
+on the design, f 66;
+#X text 164 458 - input: selects between: 1) clicking on the keyboard
+, f 66;
+#X text 320 474 2) using computer keyboard for input \, german layout
+at the moment, f 66;
+#X text 320 490 3) using left inlet for note input, f 66;
+#X text 162 514 - width white: width of the white keys, f 66;
+#X text 162 533 - height white: height of the white keys, f 66;
+#X text 162 552 - width black: width of the black keys in Percent of
+the white keys, f 70;
+#X text 162 571 - amount-keyse: amount of white keys \, 21 are two
+octaves, f 70;
