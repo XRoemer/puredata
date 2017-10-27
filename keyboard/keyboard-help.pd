@@ -75,6 +75,6 @@ ge/en, f 31;
 #X text 162 524 settings dialog:, f 66;
 #X text 167 767 works with Purr Data \, tested on win7 \, win10, f
 31;
-#X text 167 804 needs legacy_mouseclick for clicking keys by mouse.
-legacy_mouseclick is part of Pure Data. If you can miss clicking by
+#X text 167 803 needs legacy_mouseclick for clicking keys by mouse.
+legacy_mouseclick is part of Purr Data. If you can miss clicking by
 mouse \, keyboard.pd works with vanilla.;
