@@ -1,14 +1,14 @@
-# Pure Data Keyboard
+# Pure Data Sequenzer
 
 ![alt tag](sequenzer.png)
 
 Sequenzer with some special abilities:
 - microtiming
 - solo and mute buttons
-- full length button to get the length till the next note in the row appears
+- full length button to get the length from played note to next note in the row
 - style, size, amount of beats are fully customizable
 
-Usage: Download this folder and start keyboard-help.pd
+Usage: Download this folder and start sequenzer_matrix.pd
 
 Works with Purr Data 2.4.0
 
