@@ -2,7 +2,7 @@
 
 Creates items by clicking
 
-Usage: Download zip of upper folder, unpack and start sequencer from the folder new_sequencer.pd
+Usage: Download zip of upper folder, unpack and start sequencer.pd from the folder new_sequencer
 
 Works with Purr Data, tested on win7
  
