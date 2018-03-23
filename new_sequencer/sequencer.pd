@@ -46,7 +46,7 @@
 #N struct 1579-col_0 float x float y float col;
 #N struct 1581-col_0 float x float y float col;
 #N struct 1583-col_0 float x float y float col;
-#N canvas 2041 55 469 409 10;
+#N canvas 1966 37 469 409 10;
 #N canvas 882 209 1001 615 beeps 0;
 #X obj 65 24 inlet notes;
 #X obj 323 186 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
