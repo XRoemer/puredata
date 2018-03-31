@@ -1,6 +1,6 @@
 # tri_ops_v2
 
-![alt tag](tri_ops_v2.png)
+![alt tag](tri_ops_v2b.png)
 
 FM-synth
 
