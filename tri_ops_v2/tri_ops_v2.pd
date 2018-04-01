@@ -1,8 +1,8 @@
-#N canvas 926 203 545 624 10;
+#N canvas 1167 111 545 693 10;
 #X obj 109 112 cnv 15 233 192 empty \$0-background empty 20 12 0 14
 -145896 -262144 0;
 #X obj 191 67 bendin;
-#N canvas 749 201 1171 766 tri_ops4p 0;
+#N canvas 1985 105 1171 835 tri_ops4p 0;
 #X obj 119 680 outlet~;
 #X obj 181 135 clip 0 1;
 #X obj 119 91 inlet;
@@ -54,13 +54,13 @@
 #X obj 723 84 unpack f f;
 #N canvas 2041 265 557 426 adsr 0;
 #X obj 87 117 vsl 15 81 0.1 1 0 1 empty empty a 3 5 0 10 -158047 -1
--262144 300 1;
+-262144 0 1;
 #X obj 102 117 vsl 15 81 0.1 1 0 1 empty empty d 3 5 0 10 -158047 -1
--262144 1000 1;
+-262144 1778 1;
 #X obj 132 117 vsl 15 81 0.2 1 0 1 empty empty r 3 5 0 10 -158047 -1
--262144 1700 1;
+-262144 1800 1;
 #X obj 117 117 vsl 15 81 0 1 0 1 empty empty s 3 5 0 10 -158047 -1
--262144 1600 1;
+-262144 4000 1;
 #X obj 87 72 unpack f f f f;
 #X obj 87 36 inlet;
 #X obj 88 266 pack f f f f;
@@ -98,13 +98,13 @@
 #X restore 588 149 pd adsr;
 #N canvas 2041 265 557 426 adsr 0;
 #X obj 87 117 vsl 15 81 0.1 1 0 1 empty empty a 3 5 0 10 -258034 -1
--1 1950 1;
+-1 0 1;
 #X obj 102 117 vsl 15 81 0.1 1 0 1 empty empty d 3 5 0 10 -258034 -1
--1 867 1;
+-1 2667 1;
 #X obj 132 117 vsl 15 81 0.2 1 0 1 empty empty r 3 5 0 10 -258034 -1
 -1 1800 1;
 #X obj 117 117 vsl 15 81 0 1 0 1 empty empty s 3 5 0 10 -258034 -1
--1 1900 1;
+-1 4000 1;
 #X obj 87 72 unpack f f f f;
 #X obj 87 36 inlet;
 #X obj 88 266 pack f f f f;
@@ -142,13 +142,13 @@
 #X restore 655 149 pd adsr;
 #N canvas 1273 278 557 449 adsr 0;
 #X obj 87 117 vsl 15 81 0.1 1 0 1 empty empty a 3 5 0 10 -120084 -1
--262144 1100 1;
+-262144 0 1;
 #X obj 102 117 vsl 15 81 0.1 1 0 1 empty empty d 3 5 0 10 -120084 -1
--262144 4311 1;
+-262144 3111 1;
 #X obj 132 117 vsl 15 81 0.2 1 0 1 empty empty r 3 5 0 10 -120084 -1
--262144 2700 1;
+-262144 1800 1;
 #X obj 117 117 vsl 15 81 0 1 0 1 empty empty s 3 5 0 10 -120084 -1
--262144 4900 1;
+-262144 4000 1;
 #X obj 87 72 unpack f f f f;
 #X obj 87 36 inlet;
 #X obj 88 266 pack f f f f;
@@ -190,33 +190,33 @@
 #X obj 202 329 t a;
 #N canvas 635 77 1285 748 fms 0;
 #X obj 531 187 vradio 15 0 1 5 empty empty empty 0 -8 0 10 -158047
--1 -262144 3;
+-1 -262144 0;
 #X obj 598 187 vradio 15 1 1 5 empty empty empty 0 -8 0 10 -258034
--1 -1 3;
+-1 -1 0;
 #X obj 516 265 nbx 3 14 0.25 16 0 0 empty empty empty 0 -8 0 10 -158047
--262144 -262144 0.25 256 0;
+-262144 -262144 2 256 0;
 #X obj 516 187 vsl 15 70 0 0.5 0 1 empty empty fb 2 6 0 10 -158047
--1 -262144 2600 1;
+-1 -262144 0 1;
 #X obj 583 187 vsl 15 70 0 0.5 0 1 empty empty fb 2 6 0 10 -258034
--1 -1 1200 1;
+-1 -1 0 1;
 #X obj 613 187 vsl 15 70 0 1 0 1 empty empty l 2 6 0 10 -258034 -1
--1 5900 1;
+-1 1380 1;
 #X obj 665 187 vradio 15 0 1 5 empty empty empty 0 -8 0 10 -120084
 -1 -262144 0;
 #X obj 650 187 vsl 15 70 0 0.5 0 1 empty empty fb 2 6 0 10 -120084
--1 -262144 3200 1;
+-1 -262144 0 1;
 #X obj 546 187 vsl 15 70 0 1 0 1 empty empty l 2 6 0 10 -158047 -1
--262144 6500 1;
+-262144 1725 1;
 #X obj 680 187 vsl 15 70 0 1 0 1 empty empty l 2 6 0 10 -120084 -1
--262144 0 1;
+-262144 6900 1;
 #X obj 584 265 nbx 3 14 0.25 16 0 0 empty empty empty 0 -8 0 10 -258034
--1 -1 0.25 256 0;
+-1 -1 3 256 0;
 #X obj 628 187 vsl 15 70 0 1 0 1 empty empty fm 0 6 0 10 -158047 -1
--262144 0 1;
+-262144 3450 1;
 #X obj 710 187 vsl 15 70 0 1 0 1 empty empty fm 0 6 0 10 -258034 -1
 -1 0 1;
 #X obj 695 187 vsl 15 70 0 1 0 1 empty empty fm 0 6 0 10 -158047 -1
--262144 0 1;
+-262144 3450 1;
 #X obj 372 17 inlet;
 #X obj 333 636 outlet;
 #X obj 793 460 pack f f f f;
@@ -265,15 +265,15 @@
 #X obj 843 443 t b f;
 #X obj 809 443 t b f;
 #X obj 627 274 mknob 17 200 0 1 0 0 empty empty lfo -2 -7 0 10 -262144
--260097 -262144 0 1;
+-260097 -262144 6156 1;
 #X obj 665 274 mknob 17 200 0 1 0 0 empty empty fb 1 -7 0 10 -262144
 -260097 -262144 0 1;
 #X obj 646 274 mknob 17 200 0 1 0 0 empty empty fm 1 -7 0 10 -262144
 -260097 -262144 0 1;
 #X obj 684 274 mknob 17 200 -1 1 0 0 empty empty kt 1 -7 0 10 -262144
--260097 -262144 0 1;
+-260097 -262144 9950 1;
 #X obj 708 274 mknob 17 200 0 1 0 0 empty empty dt 1 -7 0 10 -262144
--1 -262144 0 1;
+-1 -262144 3980 1;
 #X obj 876 35 inlet colors;
 #X obj 876 57 route col0 col1 col2;
 #X connect 0 0 19 0;
@@ -407,7 +407,7 @@
 #X obj 290 564 unpack f f f;
 #X obj 290 542 route vol;
 #X obj 290 522 list trim;
-#N canvas 484 437 311 358 router 0;
+#N canvas 410 526 311 381 router 0;
 #X obj 123 65 t b f;
 #X obj 79 244 outlet;
 #X obj 158 244 outlet;
@@ -437,14 +437,14 @@
 #X msg 46 489 vis 3 1;
 #X obj 273 225 change;
 #X obj 785 162 mknob 17 200 0 1 0 0 empty empty vib 0 -7 0 10 -262144
--64 -262144 0 1;
+-64 -262144 13300 1;
 #X obj 785 188 mknob 17 200 0 1 0 0 empty empty am 1 -7 0 10 -262144
--64 -262144 0 1;
+-64 -262144 3400 1;
 #X obj 831 5 inlet colors;
 #X msg 870 73 color \$1 \$2;
 #X msg 909 95 color \$1 \$2;
 #X obj 831 27 route col0 col1 col2 voices;
-#N canvas 1986 235 714 586 poly 0;
+#N canvas 1132 242 714 609 poly 0;
 #X obj 92 94 inlet pitch;
 #X obj 239 94 inlet poly;
 #X obj 92 161 demux . . . . . . . . . .;
@@ -527,7 +527,7 @@
 #X obj 119 608 *~ 1;
 #X obj 197 25 namecanvas triops;
 #X obj 785 218 mknob 17 201 0 2 0 0 empty empty vol 0 -7 0 10 -262144
--64 -262144 0 1;
+-64 -262144 10000 1;
 #X floatatom 901 237 7 0 0 0 - - -, f 7;
 #X obj 940 424 dbtorms;
 #X obj 901 257 moses 1;
@@ -1099,16 +1099,16 @@ rat 1 3 \, detune 0 \, ktLfoFmFb 0.0150754 0 0.567839 0.568543 \, wave
 #X connect 3 0 0 0;
 #X connect 4 0 0 1;
 #X restore 502 194 pd set_msg;
-#X msg 104 262 adsr0 0.13375 0.2125 0.2 0.37;
-#X msg 104 284 adsr1 0.319375 0.197537 0.2375 0.38;
-#X msg 104 306 adsr2 0.22375 0.584988 0.6125 0.47;
-#X msg 104 328 wave 3 3 0;
-#X msg 296 261 ktLfoFmFb -1 0 0 0;
-#X msg 296 281 detune 0;
-#X msg 296 301 rat 1 1;
-#X msg 580 259 fb 0.188406 0.0869565 0.231884;
-#X msg 581 281 fm 0 0 0;
-#X msg 581 304 vol 0.942029 0.855072 0;
+#X msg 104 262 adsr0 0.1 0.3 0.5 0.38;
+#X msg 104 284 adsr1 0.1 0.4 0.5 0.38;
+#X msg 104 306 adsr2 0.1 0.45 0.5 0.38;
+#X msg 104 328 wave 0 0 0;
+#X msg 296 261 ktLfoFmFb 0 0.309347 0 0;
+#X msg 296 281 detune 0.2;
+#X msg 296 301 rat 2 3;
+#X msg 580 259 fb 0 0 0;
+#X msg 581 281 fm 0.5 0 0.5;
+#X msg 581 304 vol 0.25 0.2 1;
 #X obj 295 56 inlet trigger-outlet;
 #X obj 296 579 outlet;
 #X obj 295 78 t b b;
@@ -1118,7 +1118,7 @@ rat 1 3 \, detune 0 \, ktLfoFmFb 0.0150754 0 0.567839 0.568543 \, wave
 #X msg 296 529 addcomma;
 #X obj 296 456 t b a;
 #X obj 322 482 list prepend add2;
-#X msg 296 321 vibAm 0.668342 0.0954774;
+#X msg 296 321 vibAm 0.668342 0.170854;
 #X obj 128 159 route adsr0 adsr1 adsr2 wave ktLfoFmFb vibAm detune
 rat fb fm vol main_vol, f 75;
 #N canvas 726 344 450 300 set_msg 0;
@@ -1239,7 +1239,7 @@ rat fb fm vol main_vol, f 75;
 #X coords 0 -1 1 1 19 136 2 209 114;
 #X restore 324 165 pd presets;
 #X obj 324 151 nbx 1 14 0 9 0 1 empty empty vc 2 -8 0 10 -262144 -1
--261351 3 256 0;
+-261351 2 256 0;
 #N canvas 233 179 627 546 colors 0;
 #X obj 262 154 s \$0-background;
 #X msg 262 129 vis_size 233 192;
