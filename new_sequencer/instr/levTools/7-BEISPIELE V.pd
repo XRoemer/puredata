@@ -1,0 +1,92 @@
+#N canvas 0 0 1423 798 10;
+#X obj 6 -52 cnv 15 1200 60 empty empty Beispiele-V 140 30 0 56 -99865
+-260097 0;
+#X obj 6 9 cnv 15 8000 4000 empty empty empty 20 32 0 28 -228856 -1
+0;
+#X obj 43 187 presets;
+#X obj 44 307 steps 1;
+#X obj 43 630 delayer 1;
+#X obj 44 424 sampler 1;
+#X obj 576 630 room 1;
+#X obj 473 1357 output 1;
+#X obj 473 1234 limits 1;
+#X obj 1099 638 graindelay 1;
+#X obj 1097 872 volume 3;
+#X obj 1423 688 sequenzer 1;
+#X obj 1427 1029 osci 1;
+#X obj 1125 1316 delayer 1;
+#X obj 857 1174 volume 4;
+#X obj 2146 177 sequenzer 2;
+#X obj 2148 520 osci 2;
+#X obj 2201 1530 output 2;
+#X obj 2199 1421 limits 2;
+#X obj 2197 712 filter 2;
+#X obj 2185 937 verb 1;
+#X obj 2679 664 midiinput 1;
+#X obj 2662 739 osci 3;
+#X obj 2705 1183 delayer 3;
+#X obj 2672 1393 volume 6;
+#X obj 575 309 steps 2;
+#X obj 1098 311 steps 3;
+#X obj 1797 1030 osci 5;
+#X obj 1344 1255 plopp 1;
+#X obj 2688 933 plopp 2;
+#X obj 575 428 sampler 2;
+#X obj 1095 430 sampler 3;
+#X text 261 267 Bassdrum;
+#X text 803 272 Snaredrum;
+#X text 1329 278 HiHat;
+#X text 1737 650 Baseline;
+#X text 2456 145 Melody;
+#X text 2828 706 Keyboard-Synthesizer;
+#X text 268 120 Das Stück besteht aus einem kleinen Drumset aus Bass
+\, Snare und HiHat \, die jeweils mit Effekten interessanter im Klang
+gemacht wurden. Dazu erklingt eine Basslinie aus dem mittleren Synthesizer.
+Rechts daneben kann eine höhere Melodielinie aktiviert werden. Zu
+guter letzt ist ganz rechts eine Synthesizer angelegt \, der über
+die Klaviatur (auch Computertastatur) gespielt werden kann.;
+#X text 268 28 In diesem letzten Beispiel wurden die lev-Tools genutzt
+\, um beispielhaft ein komplettes Stück zu gestalten. Natürlich wurden
+nicht alle Tools dabei genutzt.;
+#X text 268 84 Alle Einstellungen \, Samples und Sequenzerbänke können
+aus dem Ordner 'Beispiel V' geladen werden.;
+#X obj 1166 55 levlink;
+#X obj 2185 1091 volume 34;
+#X connect 3 0 5 0;
+#X connect 4 0 8 0;
+#X connect 5 0 4 0;
+#X connect 6 0 8 0;
+#X connect 8 0 7 0;
+#X connect 8 0 7 1;
+#X connect 9 0 10 0;
+#X connect 10 0 8 0;
+#X connect 11 0 12 0;
+#X connect 11 0 27 0;
+#X connect 11 0 28 1;
+#X connect 12 0 28 0;
+#X connect 13 0 14 0;
+#X connect 14 0 8 0;
+#X connect 15 0 16 0;
+#X connect 16 0 19 0;
+#X connect 18 0 17 0;
+#X connect 18 0 17 1;
+#X connect 19 0 20 0;
+#X connect 20 0 42 0;
+#X connect 21 0 22 0;
+#X connect 21 0 29 1;
+#X connect 22 0 29 0;
+#X connect 23 0 24 0;
+#X connect 24 0 18 0;
+#X connect 25 0 30 0;
+#X connect 26 0 31 0;
+#X connect 27 0 28 0;
+#X connect 28 0 13 0;
+#X connect 29 0 23 0;
+#X connect 30 0 6 0;
+#X connect 31 0 9 0;
+#X connect 41 0 26 0;
+#X connect 41 0 25 0;
+#X connect 41 0 3 0;
+#X connect 41 0 15 0;
+#X connect 41 0 11 0;
+#X connect 42 0 18 0;

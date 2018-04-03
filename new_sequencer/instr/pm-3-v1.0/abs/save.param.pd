@@ -1,0 +1,18 @@
+#N canvas 639 302 386 251 10;
+#X text 30 -293 \$1 = \$0 of the parent patch;
+#X text 30 -278 \$2 = name of the control to save;
+#X obj 101 -219 r \$1-\$2.s;
+#X obj 26 -179 list prepend add;
+#X obj 26 -159 list trim;
+#X obj 26 -139 s \$1-to.textfile;
+#X obj 26 -199 list append 0;
+#X text 111 -200 0 if no value is received before saving;
+#X text 30 -308 arguments:;
+#X obj 26 -239 r \$1-get.values;
+#X obj 26 -219 symbol \$2;
+#X connect 2 0 6 1;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 6 0 3 0;
+#X connect 9 0 10 0;
+#X connect 10 0 6 0;

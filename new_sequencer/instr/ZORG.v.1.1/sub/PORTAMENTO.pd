@@ -1,0 +1,38 @@
+#N canvas 854 18 450 300 10;
+#X msg 250 181 \$1 \$2;
+#X obj 250 156 pack f f;
+#X obj 250 207 line;
+#X floatatom 250 229 5 0 0 0 - - -;
+#X obj 295 46 mknob 32 32 0 1000 0 1 empty empty PORTAMENTO 0 -8 0 8
+-262144 -1 -1 1 1;
+#X floatatom 295 92 5 0 0 0 - - -;
+#X obj 128 132 mknob 40 40 0.25 125 0 0 PORTAMENTO PORTAMENTO-r TIME
+8 48 0 8 -262144 -1 -1 0 1;
+#X text 114 105 PORTAMENTO;
+#X msg 320 181 \$1 \$2;
+#X obj 320 156 pack f f;
+#X obj 320 207 line;
+#X floatatom 320 229 5 0 0 0 - - -;
+#X obj 128 51 loadbang;
+#X msg 128 80 0.25;
+#X obj 250 255 s vco1;
+#X obj 320 255 s vco2;
+#X obj 250 130 r nota;
+#X obj 320 130 r nota;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 3 0 14 0;
+#X connect 4 0 5 0;
+#X connect 5 0 1 1;
+#X connect 5 0 9 1;
+#X connect 6 0 4 0;
+#X connect 8 0 10 0;
+#X connect 9 0 8 0;
+#X connect 10 0 11 0;
+#X connect 11 0 15 0;
+#X connect 12 0 13 0;
+#X connect 13 0 6 0;
+#X connect 16 0 1 0;
+#X connect 17 0 9 0;
+#X coords 0 -1 1 1 93 93 2 100 100;

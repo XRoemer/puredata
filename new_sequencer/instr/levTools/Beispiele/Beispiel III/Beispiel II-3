@@ -1,0 +1,30 @@
+looper 0 3 0 C:/Users/Win7 Pro x64/Desktop/Loop-Ensemble/LoopTools/Aktuelles Set/Beispiele/Beispiel II/Beispiel II-3-looperTestSample.wav
+;
+keysa 0 0 127 63.5 0 10.0045 63.5 50.1002 ;
+midiloop 0 0 1 ;
+output 2 127;
+simple 2 0 127 31.75 0 0 ;
+input 2 63.5;
+vocodo 2 127 0 35.0003 10.0045 50.1002 63.5 0;
+output 2 127;
+output 2 127;
+down 2 24 1;
+output 2 127;
+input 3 63.5;
+room 3 0.500013 0.85 0.5;
+keysa 3 0 127 63.5 0 10.0045 63.5 50.1002 ;
+delayer 4 4.03576 64.7959 93.8696;
+input 4 63.5;
+osci 5 0 3.52867 1.27 1.27 63.5 0.500948 63.5;
+verb 6 0.9 0.5 0.849966;
+clock 6 14.4006;
+sequenzer 6 120.178 54.1849 1 0.534646 4 2 C:/Users/Win7 Pro x64/Desktop/Loop-Ensemble/LoopTools/Aktuelles Set/Beispiele/Beispiel II/Beispiel II-3-SeqBank
+;
+clock 8 14.4006;
+delayer 9 0.999688 127 0;
+volume 9 1 63.5;
+phaser 9 127 0 1.27966 0;
+osci 22 3 3.52867 1.27 14.2292 63.5 0.0672414 63.5;
+room 77 0.500013 0.85 0.5;
+volume 187 1 63.5;
+input 2536 63.5;

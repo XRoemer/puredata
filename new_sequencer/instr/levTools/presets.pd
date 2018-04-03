@@ -1,0 +1,99 @@
+#N canvas 401 231 635 498 10;
+#N canvas 0 0 1423 798 save 1;
+#X obj 45 65 r toolssavelists;
+#X msg 171 198 clear;
+#X obj 75 391 textfile;
+#X obj 811 366 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 841 466 clear;
+#X msg 838 616 rewind;
+#X text 888 494 Load;
+#X obj 811 494 openpanel;
+#X obj 811 403 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 811 517 read \$1;
+#X obj 811 384 t b b;
+#X obj 811 560 del 20;
+#X obj 811 538 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 811 582 t b b;
+#X obj 811 422 getdir;
+#X obj 344 138 savepanel;
+#X obj 344 43 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 344 170 symbol;
+#X obj 344 63 del 50;
+#X msg 285 273 write \$1;
+#X obj 344 87 getdir;
+#X obj 35 99 list;
+#X obj 35 231 zl join;
+#X msg 35 205 add;
+#X obj 35 168 t b l;
+#X msg 811 449 symbol \$1;
+#X obj 803 657 until;
+#X obj 803 683 f;
+#X obj 833 683 + 1;
+#X obj 774 716 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 76 478 s toolssavebank;
+#X obj 344 0 inlet;
+#X obj 810 308 inlet;
+#X msg 803 634 300;
+#X obj 424 218 s toolsdirectory;
+#X obj 256 181 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 313 226 symbol;
+#X obj 257 203 del 300;
+#X connect 0 0 21 0;
+#X connect 1 0 2 0;
+#X connect 2 0 30 0;
+#X connect 3 0 10 0;
+#X connect 4 0 2 0;
+#X connect 5 0 2 0;
+#X connect 7 0 9 0;
+#X connect 8 0 14 0;
+#X connect 9 0 12 0;
+#X connect 9 0 2 0;
+#X connect 10 0 8 0;
+#X connect 10 1 4 0;
+#X connect 11 0 13 0;
+#X connect 12 0 11 0;
+#X connect 13 0 33 0;
+#X connect 13 1 5 0;
+#X connect 14 0 25 0;
+#X connect 15 0 17 0;
+#X connect 16 0 18 0;
+#X connect 16 0 1 0;
+#X connect 17 0 34 0;
+#X connect 17 0 36 1;
+#X connect 17 0 35 0;
+#X connect 18 0 20 0;
+#X connect 19 0 2 0;
+#X connect 20 0 15 0;
+#X connect 21 0 24 0;
+#X connect 22 0 2 0;
+#X connect 23 0 22 0;
+#X connect 24 0 23 0;
+#X connect 24 1 22 1;
+#X connect 25 0 7 0;
+#X connect 26 0 27 0;
+#X connect 27 0 28 0;
+#X connect 27 0 29 0;
+#X connect 28 0 27 1;
+#X connect 29 0 2 0;
+#X connect 31 0 16 0;
+#X connect 32 0 3 0;
+#X connect 33 0 26 0;
+#X connect 35 0 37 0;
+#X connect 36 0 19 0;
+#X connect 37 0 36 0;
+#X restore 142 245 pd save;
+#X obj 102 102 cnv 15 120 80 empty empty empty 20 12 0 14 -33289 -66577
+0;
+#X obj 116 134 bng 30 250 50 0 toolssavebang toolssavebang_r save -1
+-10 0 14 -191407 -260097 -262144;
+#X obj 173 134 bng 30 250 50 0 toolsloadbang toolsloadbang_r load -1
+-10 0 14 -191407 -260097 -262144;
+#X connect 2 0 0 0;
+#X connect 3 0 0 1;
+#X coords 0 -1 1 1 124 84 1 100 100;

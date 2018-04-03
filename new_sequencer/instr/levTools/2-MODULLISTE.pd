@@ -1,0 +1,561 @@
+#N canvas 1 20 1421 798 10;
+#X obj 1061 -11 loadbang;
+#X msg 1061 23 \; pd dsp 0;
+#X obj 1061 6 del 100;
+#X obj 0 46 cnv 15 7500 2600 empty empty empty 20 32 0 28 -228856 -1
+0;
+#X obj 449 163 input 1;
+#X text 41 172 - [input]: Sound vom Mikrofon bzw. Mikrofoneingang des
+Computers aufnehmen und ausgeben.;
+#X text 41 209 Das Modul hat einen Eingang zur Kontrolle der Inputlautstärke
+und einen Ausgang dür die Audiodaten.;
+#X obj 449 312 output 1;
+#X text 34 308 - [output]: Sound über den Ausgang des Computers wiedergeben.
+;
+#X text 34 345 Das Modul hat zwei Eingänge für die jeweilige Ausgabe
+der Audiodaten über den linken und den rechten Lautsprecher. Über
+den dritten Eingang kann die Lautstärke kontrolliert werden.;
+#X obj 449 449 volume 1;
+#X text 31 453 - [volume]: Ein einfacher Lautstärkeregler.;
+#X text 33 487 Das Modul hat einen Eingang für das Audiosignal. Über
+die anderen Eingänge können mit Midibefehlen die Regler und Schalter
+gesteuert werden. Das Modul gibt das veränderte Audiosignal wieder
+aus.;
+#X obj 452 578 limits 1;
+#X text 28 613 Das Modul hat jeweils Ein- und Ausgang für das Audiosignal.
+;
+#X obj 453 677 tor 1;
+#X text 28 586 - [limits]: Sorgt dafür \, dass der Sound nicht übersteuert.
+;
+#X text 25 687 - [tor]: Lässt nur Signal über einer bestimmten Lautstärke
+durch (Gate).;
+#X text 25 727 Das Modul hat einen Eingang für das Audiosignal. Über
+den zweiten Eingang kann der Regler mit Midibefehlen gesteuert werden.
+Der Ausgang gibt das bearbeitete Audiosignal aus.;
+#X obj 451 826 room 1;
+#X text 20 880 Das Modul hat einen Eingang für das Audiosignal. Über
+die anderen Eingänge können mit Midibefehlen die Regler und Schalter
+gesteuert werden. Das Modul gibt das veränderte Audiosignal wieder
+aus.;
+#X obj 448 1067 verb 1;
+#X text 18 1113 Das Modul hat einen Eingang für das Audiosignal. Über
+die anderen Eingänge können mit Midibefehlen die Regler gesteuert
+werden. Das Modul gibt das veränderte Audiosignal wieder aus.;
+#X obj 449 1254 delayer 1;
+#X text 25 1282 - [delayer]: Echoeffekt.;
+#X text 24 1311 Das Modul hat einen Eingang für das Audiosignal. Über
+die anderen Eingänge können mit Midibefehlen die Regler gesteuert
+werden. Das Modul gibt das veränderte Audiosignal wieder aus.;
+#X text 19 850 - [room]: Künstlicher Raumklang.;
+#X text 16 1083 - [verb]: Künstlicher Raumklang II.;
+#X text 22 1461 - [graindelay]: Echoeffekt mit granularen Effekten.
+;
+#X text 23 1492 Das Modul hat einen Eingang für das Audiosignal. Über
+die anderen Eingänge können mit Midibefehlen die Regler gesteuert
+werden. Das Modul gibt das veränderte Audiosignal wieder aus.;
+#X obj 1928 315 filter 1;
+#X text 1486 321 - [filter]: Hochpass- \, Tiefpass- und Bandpassfilter
+\, nimmt dem Sound die hohen bzw. tiefen Anteile. Q regelt die Schärfe
+des Filterklangs auf der Frequenz \, bei der abgeschnitten wird.;
+#X obj 1928 547 plopp 1;
+#X text 1485 390 Das Modul hat einen Eingang für das Audiosignal.
+Über die anderen Eingänge können mit Midibefehlen die Regler gesteuert
+werden. Das Modul gibt das gefilterte Audiosignal wieder aus.;
+#X text 1492 544 - [plopp]: Hochpass- \, Tiefpass- und Bandpassfilter
+mit eigener Hüllkurve. Diese Hüllkurve steuert Bewegungen des Filters
+in der Frequenz.;
+#X text 1491 602 Das Modul hat einen Eingang für das Audiosignal.
+An den zweiten Eingang können Steuerdaten angeschlossen werden \,
+die die Hüllkurve auslösen (z.B. vom [Sequenzer] \, [midiinput] \,
+[loopmidi] \, usw.). Über die anderen Eingänge können mit Midibefehlen
+die Regler und Schalter gesteuert werden. Das Modul gibt das gefilterte
+Audiosignal aus.;
+#X obj 1140 86 speed 1;
+#X text 753 206 Das Modul hat einen Eingang für das Audiosignal und
+einen zur Kontrolle des Schalters und einen Ausgang dür die Audiodaten.
+;
+#X text 752 162 - [speed]: Beschleunigt oder verlangsamt den Sound
+und verändert dadurch die Tonhöhe. Verzögert dabei das Signal.;
+#X obj 1140 354 grainy 1;
+#X text 757 405 Das Modul hat einen Eingang für das Audiosignal. Über
+die anderen Eingänge können mit Midibefehlen die Regler und Schalter
+gesteuert werden. Das Modul gibt das veränderte Audiosignal wieder
+aus.;
+#X text 758 363 - [grainy]: Granularer Effekt \, der den Sound stark
+verändert \, vor allem in der Tonhöhe.;
+#X text 762 550 - [ring]: Der Sound wird mit einem anderen Signal multipliziert
+und dadurch stark im Klang verändert (Ringmodulator).;
+#X obj 1151 551 ring 1;
+#X text 760 607 Das Modul hat einen Eingang für das Audiosignal. Der
+zweite Eingang ist für das 'Input 2' Signal \, mit dem moduliert werden
+kann. Über die anderen Eingänge können mit Midibefehlen die Regler
+und Schalter gesteuert werden. Das Modul gibt das veränderte Audiosignal
+aus.;
+#X obj 1215 777 down 1;
+#X text 770 826 Das Modul hat einen Eingang für das Audiosignal. Über
+den zweiten Eingang kann der Regler mit Midibefehlen gesteuert werden.
+Der Ausgang gibt das bearbeitete Audiosignal aus.;
+#X text 768 781 - [down]: Verzerrt den Sound \, indem die Qualität
+reduziert wird.;
+#X obj 1215 912 zerre 1;
+#X text 770 929 Das Modul hat einen Eingang für das Audiosignal. Über
+den zweiten Eingang kann der Regler mit Midibefehlen gesteuert werden.
+Der Ausgang gibt das bearbeitete Audiosignal aus.;
+#X text 769 903 - [zerre]: Klassische Verzerrung.;
+#X obj 1216 1023 drops 1;
+#X text 772 1080 Das Modul hat einen Eingang für das Audiosignal.
+Über die anderen Eingänge können die Regler mit Midibefehlen gesteuert
+werden. Der Ausgang gibt das bearbeitete Audiosignal aus.;
+#X text 773 1026 - [drops]: Zerstückelt das Singal und lässt nur
+kurze Soundtropfen durch \, die in Länge und Dichte reguliert werden
+können.;
+#X obj 4919 114 sequenzer 1;
+#X text 4475 115 - [sequenzer]: erzeugt Melodielinien. Muss an Klangerzeuger
+wie [osci] \, [grin] oder [keysa] angeschlossen werden. Wenn er mit
+anderen Sequenzern synchronisiert werden soll \, braucht er ein Signal
+von [clock]. Kann zur Kontrolle der Hüllkurve an [plopp] angeschlossen
+werden.;
+#X text 4474 273 Das Modul hat ganz links einen Eingang für das Sync-Signal
+von [clock] oder [link-network]. Über die anderen Eingänge können
+die Regler mit Midibefehlen gesteuert werden. Der Ausgang gibt die
+Melodielinien als Steuersignal aus.;
+#X text 4474 206 Es können acht Melodien in einer Bank gespeichert
+und abgerufen werden. Ganze Bänke können extern gespeichert werden.
+;
+#X obj 2778 145 osci 1;
+#X text 2349 198 Das Modul hat einen Eingang für die Steuerdaten.
+Über die anderen Eingänge können die Regler mit Midibefehlen gesteuert
+werden. Der Ausgang gibt das erzeugte Audiosignal aus.;
+#X obj 4920 488 midiinput;
+#X obj 4912 795 loopmidi 1;
+#X obj 2778 358 noise 1;
+#X text 2350 362 - [noise]: Erzeugt Rauschen.;
+#X text 2347 144 - [osci]: Erzeugt Klänge. Braucht Steuerdaten vom
+[sequenzer] \, von [midiinput] oder [loopmidi].;
+#X text 2351 399 Das Modul hat einen Eingang zur Kontrolle des Lautstärkereglers.
+Der Ausgang gibt das Rauschen aus.;
+#X obj 2788 759 sampler 1;
+#X text 2344 848 Der erste Eingang links kann \, z.B. von [steps] \,
+Abspielbefehle erhalten. Am zweiten Eingang kann ein Audiosignal angeschlossen
+werden \, dass dann aufgenommen werden kann. Über die anderen Eingänge
+werden die Schalter und Regler angesteuert. Das Modul gibt das abgespielte
+Sample aus.;
+#X obj 1216 1216 chorus 1;
+#X obj 1217 1425 phaser 1;
+#X obj 1217 1644 flanger 1;
+#X obj 2788 989 simple 1;
+#X obj 2785 1215 keysa 1;
+#X obj 2776 520 steps 1;
+#X obj 2786 1819 looper 1;
+#X obj 2787 1456 grin 1;
+#X obj 4927 1415 kick 1;
+#X obj 4927 1675 snare;
+#X obj 4928 2219 hihat 1;
+#X obj 4928 2421 toms 1;
+#X text 772 1218 - [chorus]: Der Chorus ist ein Effekt \, der klingt
+als würde das einkommende Audiosignal vervielfacht. Wie bei einem
+gemeinsam singenden Chor. Dadurch klingt das Signal in der Regel fetter.
+;
+#X text 770 1297 Das Modul hat einen Eingang für das Audiosignal.
+Über die anderen Eingänge können die Regler mit Midibefehlen gesteuert
+werden. Der Ausgang gibt das bearbeitete Audiosignal aus.;
+#X text 775 1427 - [phaser]: Der Phasereffekt setzt die Phase des Signals
+in Bewegung. Dadurch entsteht ein sich ständig bewegender \, 'spaciger'
+Klang.;
+#X text 774 1493 Das Modul hat einen Eingang für das Audiosignal.
+Über die anderen Eingänge können die Regler mit Midibefehlen gesteuert
+werden. Der Ausgang gibt das bearbeitete Audiosignal aus.;
+#X text 778 1646 - [flanger]: Der Flangereffekt funktioniert und klingt
+ähnlich wie der Phasereffekt \, ist aber im Klang etwas intensiver.
+;
+#X text 778 1712 Das Modul hat einen Eingang für das Audiosignal.
+Über die anderen Eingänge können die Regler mit Midibefehlen gesteuert
+werden. Der Ausgang gibt das bearbeitete Audiosignal aus.;
+#X obj 6210 106 clock 1;
+#X obj 6187 639 record;
+#X obj 448 1462 graindelay 1;
+#X obj 1186 1873 tapedelay 1;
+#X text 781 1965 Das Modul hat einen Eingang für das Audiosignal.
+Über die anderen Eingänge können die Regler mit Midibefehlen gesteuert
+werden. Der Ausgang gibt das bearbeitete Audiosignal aus.;
+#X text 781 1869 - [tapedelay]: Ein Echoeffekt \, der funktioniert
+wie frühe Delayeffekte. Mitte des 20 Jahrhunderts wurden Aufnahmen
+auf Magnetbändern gemacht und die Leseköpfe dann leicht verschoben
+\, um einen Echoeffekt zu erzeugen. Dabei konnte auch die Abspielgeschwindigkeit
+des Bands verändert werden \, um weitere Effekte zu erzeugen.;
+#X obj 3814 1516 vocodo;
+#X obj 7017 112 control 1;
+#X obj 7020 755 nummer 1;
+#X obj 7032 520 taste 1;
+#X text 2344 759 - [sampler]: Mit dem Sampler können Sounddateien
+vom Computer geladen werden. Diese können dann in der Länge bearbeitet
+und mit wählbahrer Geschwindigkeit abgespielt werden (auch rückwärts)
+Außerdem kann der Sampler den Sound vom zweiten Eingang aufnehmen
+und diese Aufnahmen auf der Festplatte speichern.;
+#X text 2347 988 - [simple]: Eine leicht vereinfachte Version von [sampler]
+mit einfacher Hüllkurve. Sehr gut für Drumsamples geeignet.;
+#X text 2346 1029 Der erste Eingang links kann \, z.B. von [steps]
+\, Abspielbefehle erhalten. Am zweiten Eingang kann ein Audiosignal
+angeschlossen werden \, dass dann aufgenommen werden kann. Über die
+anderen Eingänge werden die Schalter und Regler angesteuert. Das Modul
+gibt das abgespielte Sample aus.;
+#X text 2349 516 - [steps]: Ein Stepsequenzer. Die 16 Schritte werden
+in der Schleife durchlaufen. Ist ein Schritt markiert \, so wird ein
+Abspielbefehl ausgegeben. Bis zu 8 Sequenzen können gespeichert und
+als Bank zusammengefasst und exportiert werden. Der Sequenzer kann
+über [clock] oder [link-network] mit anderen Modulen synchronisiert
+werden.;
+#X text 2349 602 Der erste Eingang links kann zur Synchronisierung
+mit anderen Modulen mit [clock] oder [link-network] verbunden werden.
+Ein Steuerbefehl am zweiten Eingang startet bzw. stoppt den Sequenzer.
+Über die anderen Eingänge werden die anderen Schalter und Regler
+angesteuert. Das Modul gibt Abspielbefehle aus. Es wird in der Regel
+an [sampler] \, [simple] \, [kick] \, [snare] \, [hihat] \, [toms]
+\, usw. angeschlossen.;
+#X text 2343 1333 An den ersten Eingang links kann [midiinput] \, [sequenzer]
+oder [loopmidi] angeschlossen werden \, damit Steuerdaten zur Tonhöhe
+empfangen werden. Am zweiten Eingang kann ein Audiosignal angeschlossen
+werden \, dass dann aufgenommen werden kann. Über die anderen Eingänge
+werden die Schalter und Regler angesteuert. Das Modul gibt bei Tastendruck
+das tonal gestimmte Sample aus.;
+#X text 2344 1216 - [keysa]: Ein Sampler \, der mit einer Klaviatur
+tonal in 4 Stimmen gespielt werden kann. Der Sampler kann einen Sound
+von der Festplatte laden oder vom zweiten Eingang aufnehmen und diese
+Aufnahmen dann auf der Festplatte speichern. Das Sample kann in der
+Länge bearbeitet werden. Mit dem Tune-Regler kann das Sample gestimmt
+werden \, damit es harmonisch mit anderen gestimmten Instrumenten klingt.
+Schließlich kann die Hüllkurve des erzeugten Klangs eingestellt werden.
+;
+#X text 2345 1460 - [grin]: Ein granularer Sampler \, der mit einer
+Klaviatur tonal in 4 Stimmen gespielt werden kann. Der Sampler kann
+einen Sound von der Festplatte laden oder vom zweiten Eingang aufnehmen
+und diese Aufnahmen dann auf der Festplatte speichern. Aus dem Sample
+wird dann ein sogenanntes 'grain' ausgeschnitten mit dem Positionsregler
+und dem Längeregler. Dieses wird dann zur Klangerzeugung genutzt.
+Mit dem Tune-Regler kann das Instrument gestimmt werden \, damit es
+harmonisch mit anderen gestimmten Instrumenten klingt. Schließlich
+kann die Hüllkurve des erzeugten Klangs eingestellt werden.;
+#X text 2346 1600 An den ersten Eingang links kann [midiinput] \, [sequenzer]
+oder [loopmidi] angeschlossen werden \, damit Steuerdaten zur Tonhöhe
+empfangen werden. Am zweiten Eingang kann ein Audiosignal angeschlossen
+werden \, dass dann aufgenommen werden kann. Über die anderen Eingänge
+werden die Schalter und Regler angesteuert. Das Modul gibt bei Tastendruck
+das tonal gestimmte Sample aus.;
+#X text 2353 1822 - [looper]: Ein Loopgerät \, in dem ein Loop mit
+einer Länge bis zu vier Takten aufgenommen und dann in der Schleife
+abgespielt werden kann.;
+#X text 2352 1881 An den ersten Eingang links muss [clock] oder [link-network]
+angeschlossen werden \, damit Steuerdaten zum Tempo empfangen werden.
+Am zweiten Eingang kann ein Audiosignal angeschlossen werden \, dass
+dann aufgenommen werden kann. Über die anderen Eingänge werden die
+Schalter und Regler angesteuert. Das Modul gibt dann die Aufnahme im
+richtigen Tempo wieder aus.;
+#X text 4461 835 [midiinput] und [clock] werden an den ersten Eingang
+links angeschlossen. Über die anderen Eingänge werden die Schalter
+gesteuert. Das Modul gibt bei aktivierter Ausgabe die eingespielte
+Melodie (Steuerdaten) in einer Schleife aus.;
+#X text 4467 1735 [steps] oder ein ähnliches Modul \, das Abspieldaten
+sendet \, wird an den ersten Eingang links angeschlossen. Über die
+anderen Eingänge werden die Schalter gesteuert. Das Modul erzeugt
+eine Snaredrum als Audiosignal und gibt dieses unten Links aus.;
+#X text 4473 1485 [steps] oder ein ähnliches Modul \, das Abspieldaten
+sendet \, wird an den ersten Eingang links angeschlossen. Über die
+anderen Eingänge werden die Schalter gesteuert. Das Modul erzeugt
+eine Bassdrum als Audiosignal und gibt dieses unten Links aus.;
+#X text 4468 2271 [steps] oder ein ähnliches Modul \, das Abspieldaten
+sendet \, wird an den ersten Eingang links angeschlossen. Über die
+anderen Eingänge werden die Schalter gesteuert. Das Modul erzeugt
+ein HiHat als Audiosignal und gibt dieses unten Links aus.;
+#X text 4467 2480 [steps] oder ein ähnliches Modul \, das Abspieldaten
+sendet \, wird an den ersten Eingang links angeschlossen. Über die
+anderen Eingänge werden die Schalter gesteuert. Das Modul erzeugt
+eine Tom als Audiosignal und gibt dieses unten Links aus.;
+#X text 3352 1514 - [vocodo]: Ein Vocodermodul. Es nimmt ein Audiosignal
+\, typischerweise eine Stimme \, und überträgt sein Klangverhalten
+auf den Klang eines Synthesizers. Oft werden mit einem Vocoder roboterähnliche
+Stimmen erzeugt. Der Vocoder wird dabei wie ein Sythesizer über eine
+Klaviatur gespielt. Die drei oberen Regler verändern den Klang. Attack
+\, Sustain und Release/Decay steuern die Lautstärkehüllkurve des
+Klangs. Ist 'hold' aktiviert \, so verhält sich der Vocoder \, als
+würden durchgehend Tasten gehalten.;
+#X text 3353 1645 An den ersten Eingang wird das Audiosignal \, das
+verarbeitet werden soll (häufig eine Stimme) angeschlossen. An den
+zweiten Eingang wird ein Modul wie [midiinput] \, [sequenzer] oder
+[loopmidi] angeschlossen \, das Steuerdaten sendet. Über die restlichen
+Eingänge können mit Midibefehlen die Regler und Schalter gesteuert
+werden.;
+#X text 5737 107 - [clock]: Sendet Steuerdaten zum Tempo. Wenn ein
+[clock]-Modul an tempoabhängige Module wie [steps] \, [sequenzer]
+\, [looper] oder [loopmidi] angeschlossen wird \, so synchronisiert
+es diese. Die Module laufen dann im gleichen Tempo ab.;
+#X text 5737 181 Das Modul gibt links unten Tempo-Steuerdaten aus.
+;
+#X text 5733 419 Die beteiligten Geräte müssen im gleichen WLAN-
+oder LAN-Netzwerk sein. Dann muss nur noch auf verbinden geklickt werden
+und das Modul spuckt das Tempo aus \, in dem alle beteiligten Instrumente
+spielen. Wie das Modul [clock] kann es nun an alle Module ([Steps]
+\, [Sequenzer] \, [loopmidi] \, [looper] \, usw.) angeschlossen werden
+\, die in einem festgelegten Tempo funktionieren.;
+#X text 5733 519 Für weitere Informationen siehe 1-Einfuehrung.pd
+unter 'Netzwerk'.;
+#X text 5735 740 Nach einer halbstündigen Aufnahmezeit schaltet sich
+das Record Modul übrigens selbst ab. Ansonsten würde die Audiodatei
+geschrieben werden \, bis die Festplatte voll ist.;
+#X text 5735 642 - [record]: Mit dem Modul [record] kann einfach alles
+aufgenommen werden \, das über einen oder auch mehrere [Output]-Ausgänge
+zu hören ist.;
+#X text 5735 690 Immer \, wenn Record aktiviert ist \, erstellt es
+eine Datei mit dem Namen 'aufnahme-x.wav' im Ordner der lev-Tools.
+Dabei wird mit jeder Aufnahme das x hochgezählt.;
+#X text 5739 849 - [presets]: Hier können alle Regler- und Schalter
+Einstellungen in einem Patch in einer Datei auf der Festplatte gespeichert
+werden.;
+#X text 5740 899 Für nähere Infos siehe 1-Einführung.pd unter 'Patch-Organisation'.
+;
+#X text 6593 109 - [control]: Mit diesem Modul können in Pure Data
+eingehende Midicontrollerdaten an einen passenden Moduleingang geschickt
+werden \, damit dann mit dem Midicontroller der Regler gesteuert werden
+kann.;
+#X text 6593 171 Das Modul muss an den Moduleingang \, der den gewünschten
+Regler oder Schalter steuert \, angeschlossen werden. Dann wird einfach
+der zur Steuerung auserkorene Regler am Midicontroller bewegt. DIREKT
+danach wird schließlich auf 'zuweisen' geklickt. Nun kann mit dem
+gewählten Midicontroller der Modulregler gesteuert werden.;
+#X text 6598 570 Zum Beispiel kann eine Taste einem [steps]-sequenzer
+zugewiesen werden und diesen Starten bzw. Stoppen. Oder eine Taste
+könnte ein [volume]-Modul stumm und laut schalten.;
+#X text 6598 635 Das Modul muss an den Moduleingang \, der den gewünschten
+Schalter steuert \, angeschlossen werden. Dann wird einfach die zur
+Steuerung auserkorene Taste auf der Tastatur betätigt. DIREKT danach
+wird schließlich auf 'zuweisen' geklickt. Nun kann mit der gewählten
+Taste der Modulschalter gesteuert werden.;
+#X text 6600 526 - [taste]: Mit diesem Modul können die Tasten der
+Computertastatur Modulfunktionen zugewiesen werden \, um Prozesse und
+Ereignisse auszulösen.;
+#X obj 6190 857 presets 1;
+#X text 6597 755 - [nummer]: Dieses Modul gibt \, wenn es einen Steuerbefehl
+erhält \, eine Nummer zwischen 1-8 aus. Es sollte an [taste] angeschlossen
+werden \, um per Tastendruck aktiviert zu werden.;
+#X text 6597 819 Dieses Modul dient dazu \, per Tastendruck eine der
+8 Sequenzen der unterschiedlichen Sequenzer aufzurufen. Dafür wird
+es an den richtigen Eingang angeschlossen und die entsprechende Nummer
+der gewünschten Sequenz gewählt. Erhält es dann einen Steuerbefehl
+von Taste \, so wird die entsprechende Sequenz geladen.;
+#X text 21 65 Die lev-Tools bestehen aus vielen einzelnen Modulen und
+derzeit werden ständig neue gebaut. Hier eine am 01.08.2017 aktuelle
+Liste der Module:;
+#X obj 7012 1326 modu;
+#X obj 7018 1561 modurand;
+#X text 6590 1292 - [modu]: Dieses Modul wird zur automatischen Steuerung
+von Modulreglern eingesetzt.;
+#X text 6589 1406 Die Art und Weise dieser automatisierten Bewegung
+kann eingestellt werden. Unter 'Form' wird die Bewegungsform eingestellt.
+'sin' ist eine Sinusartige Bewegung \, 'rec' erzeugt ein hin- und herspringen
+\, 'saw' eine Aufwärtsbewegung \, 'tri' schließlich eine dreiecksartige
+Bewegung.;
+#X text 6589 1332 Das Modul erzeugt automatische Bewegungen von Steuerdaten
+(im MIDIformat zwischen 0 und 127). Wird es an einen passenden Moduleingang
+angeschlossen \, so bewegt es automatisch einen Regler. Die Bewegungen
+wiederholen sich immer wieder.;
+#X text 6591 1487 Die Mitte dieser Bewegung wird über 'Zentrum' eingestellt.
+Die Stärke des Ausschlags über 'Amplitude'. Die Geschwindigkeit der
+Bewegung über 'Frequenz'.;
+#X text 6591 1578 - [modurand]: Dieses Modul wird zur automatischen
+Steuerung von Modulreglern eingesetzt.;
+#X text 6592 1615 Es funktioniert genauso wie [modu] \, nur dass hier
+Zufallswerte ausgegeben werden.;
+#X text 6590 1656 Die Mitte der Zufallswerte wird über 'Zentrum' eingestellt.
+Die Stärke der Streuung um diesen Mittelwert über 'Amplitude'. Die
+Geschwindigkeit der Ausgabe wird über 'Frequenz' gesteuert.;
+#X obj 3793 166 shape 1;
+#X obj 3828 1278 adsr 1;
+#X text 3355 123 - [shape]: Shape ist ein Waveshapermodul.;
+#X text 3355 247 [shape] kann die 4 Standardwellenformen automatisch
+oder eine zufällige Schwingung zeugen. Außerdem kann mit der Maus
+eine Schwingung in das Fenster gezeichnet werden.;
+#X text 3355 296 [shape] erzeugt ganz ähnlich wie [osci] Töne und
+muss genauso behandelt werden: Am linken Eingang empfängt es Steuerdaten
+für die Töne (z.B. von [midiinput] oder [sequenzer]). Links unten
+gibt es sein Audiosignal aus.;
+#X text 3359 384 Auch ohne eingehende Steuerdaten kann ein Ton ausgelöst
+und in seiner Tonhöhe verändert werden. Schließlich kann dieser
+Ton gegen andere Klänge verstimmt werden und in seiner Lautstärkehüllkurve
+bearbeitet werden.;
+#X text 3355 146 Beim Waveshaping wird ein Klang auf Basis einer Schwingung
+(Wellenform) erzeugt. Das Aussehen der Welle bestimmt sozusagen die
+Bewegung des Lautsprechers bei der Klangausgabe und somit die Klangfarbe
+des Sounds. Rundliche \, sinusartige Schwingungen ergeben reine Töne.
+Schnelle \, eckige Bewegungen ergeben scharfe Klänge mit vielen Obertönen.
+;
+#X text 3355 1233 - [adsr]: adsr erzeugt eine Lautstärkehüllkuve
+;
+#X text 3356 1273 Wird an den linken Eingang von [adsr] ein Audiosignal
+angeschlossen \, so kann dieses in seinem Lautstärkeverlauf manipuliert
+werden. Dafür müssen an den 2 Eingang entweder Steuerdaten zur Lautstärke
+beim Auslösen eines Klangs (z.B. von [midiinput] oder [sequenzer])
+\, oder Steuerdaten \, die einzelne Ereignisse auslösen (z.B. von
+[banger] \, [steps] oder [taste]) angeschlossen werden.;
+#X text 3359 1373 Empfängt das Modul dann einen Steuerbefehl \, so
+führt es eine Lautstärkebewegung entlang der eingestellten Werte
+aus.;
+#X obj 7023 1097 banger 1;
+#X text 6602 1129 Die Geschwindigkeit \, mit der der Steuerbefehl gesendet
+wird \, kann unter Bpm (Beats per Minute) eingestellt werden.;
+#X text 6600 1073 - [banger]: banger erzeugt regelmäßig (regular)
+oder zeitlich zufällig (random) einen Steuerbefehl \, mit dem einzelne
+Ereignisse ausgelöst werden können.;
+#X text 6603 1177 Es kann zum Beispiel an [sampler] oder [simple] angeschlossen
+werden \, um ihre Klänge auszulösen oder auch an [adsr] \, um Hüllkurvenbewegungen
+zu erzeugen.;
+#X obj 1933 138 crush 1;
+#X obj 1926 822 delaynet 1;
+#X text 1503 855 - [delaynet]: Dieses Modul besteht aus 3 sehr kompliert
+ineinander verwobenen Delayeffekten (s. [delayer]).;
+#X text 1503 892 Wenn es richtig eingesetzt wird \, hat es sehr starke
+Auswirkungen auf den Klang. Es entstehen dann sehr lebendige \, organische
+Klangflächen \, die sehr räumlich klingen.;
+#X obj 3796 500 glocken 1;
+#X text 3357 730 Auch ohne eingehende Steuerdaten kann ein Ton ausgelöst
+und in seiner Tonhöhe verändert werden. Schließlich kann dieser
+Ton gegen andere Klänge verstimmt werden und in seiner Lautstärkehüllkurve
+bearbeitet werden.;
+#X obj 0 -15 cnv 15 1200 60 empty empty Modulliste 140 30 0 56 -99865
+-260097 0;
+#X text 3359 490 - [glocken]: Dieses Modul ist zuerst dafür da \,
+glockenähnliche Töne zu erzeugen. Mit den richtigen Einstellungen
+können allerdings auch andere \, recht außergewöhnliche Klänge
+erzeugt werden.;
+#X text 3360 547 Das Modul erzeugt seine Klänge mit sogenannter Frequenzmodulation.
+Das ist eine recht komplizierte Art der elektronischen Klangerzeugung
+\, die hier nicht ausreichend erklärt werden kann.;
+#X text 3358 601 Durch Herumspielen mit den Reglern unter Mod:1 und
+Mod:2 (Int und tune) \, können schnell überraschende Klangresultate
+erzielt werden.;
+#X text 3357 666 [glocken] erzeugt ganz ähnlich wie [osci] Töne und
+muss genauso behandelt werden: Am linken Eingang empfängt es Steuerdaten
+für die Töne (z.B. von [midiinput] oder [sequenzer]). Links unten
+gibt es sein Audiosignal aus.;
+#X text 3352 1086 Auch ohne eingehende Steuerdaten kann ein Ton ausgelöst
+und in seiner Tonhöhe verändert werden. Schließlich kann dieser
+Ton gegen andere Klänge verstimmt werden und in seiner Lautstärkehüllkurve
+bearbeitet werden.;
+#X obj 3791 862 add 1;
+#X text 3354 852 - [add]: Ein Modul \, mit dem ähnlich wie mit [osci]
+\, [shape] \, usw. Klänge erzeugt werden können.;
+#X text 3355 889 Das Modul erzeugt seine Klänge mit sogenannter 'additiver
+Synthese'. Es baut aus einzelnen Sinusschwingungen neue Klänge zusammen
+\, wobei 5 höhere Schwingungen (Obertöne) über einer Grundschwingung
+angeordnet werden. Sie bilden dann das Obertonspektrum.;
+#X text 3352 1018 [add] erzeugt ganz ähnlich wie [osci] Töne und
+muss genauso behandelt werden: Am linken Eingang empfängt es Steuerdaten
+für die Töne (z.B. von [midiinput] oder [sequenzer]). Links unten
+gibt es sein Audiosignal aus.;
+#X text 3354 961 Die Position der Obertöne über der Grundschwingung
+(Es wird der Faktor angezeigt \, mit dem die Grundfrequenz multipliziert
+wird) und ihre Lautstärke bestimmen die Klangfarbe.;
+#X obj 449 1686 vdelay 1;
+#X text 28 1769 Das Modul hat einen Eingang für das Audiosignal. Über
+die anderen Eingänge können mit Midibefehlen die Regler gesteuert
+werden. Das Modul gibt das veränderte Audiosignal wieder aus.;
+#X text 29 1709 - [vdelay]: Echoeffekt. Wie [delayer] \, nur dass beim
+Verändern der 'Time' keine Knackser zu hören sind. Stattdessen entstehen
+Effekte in der Tonhöhe.;
+#X text 4462 790 - [loopmidi]: Nimmt vom [midiinput] gespielte Melodien
+auf. Braucht dafür das Zeitsignal eines [clock] Moduls.;
+#X obj 6209 284 levlink;
+#X text 5733 284 - [levlink]: Hat prinzipiell dieselbe Funktion wie
+[clocks].;
+#X obj 1926 1214 stepfilter;
+#X text 1510 1263 [stepfilter] ist ein Filter \, der mit einem Sequenzer
+gesteuert werden kann. So können bei einem Sound rhythmische Filterbewegungen
+erzeugt werden.;
+#X text 1510 1330 Das Modul hat einen Eingang für das Audiosignal
+\, der zweite Eingang braucht Steuerdaten von einem [sequenzer].;
+#X text 1504 146 - [crush]: Verändert den Klang \, indem die Qualität
+(die Auflösung) reduziert wird.;
+#X text 1505 190 Das Modul hat einen Eingang für das Audiosignal.
+Über die anderen Eingäge können der Regler und der Schalter mit
+Midibefehlen gesteuert werden. Der Ausgang gibt das veränderte Audiosignal
+aus.;
+#X obj 4911 1059 oktave;
+#X text 4464 1049 - [oktave]: Dieses Modul erhält Steuerdaten zur
+Tonhöhe von [midiinput] \, [sequenzer] \, [loopmidi] \, etc. und transponiert
+den Ton dann in Oktavschritten hoch oder runter.;
+#X text 4464 1103 Links oben werden [midiinput] \, [sequenzer] \, [loopmidi]
+\, etc. angeschlossen. Links unten werden die transponierten Steuerdaten
+ausgegeben.;
+#X text 5733 319 LINK ist eine von der Firma Ableton entwickelte Software
+\, mit der Musiksoftware auf unterschiedlichen Geräten (Computer \,
+Smartphones \, Tablets \, etc.) miteinander verbunden werden kann \,
+damit die erzeugten Klänge im gleichen Tempo abgespielt werden können.
+Diesen Vorgang nennt man auch Synchronisation. [levlink] ermöglichet
+diese Verbindung.;
+#X text 4469 2010 [steps] oder ein ähnliches Modul \, das Abspieldaten
+sendet \, wird an den ersten Eingang links angeschlossen. Über die
+anderen Eingänge werden die Schalter gesteuert. Das Modul erzeugt
+eine Snaredrum als Audiosignal und gibt dieses unten Links aus.;
+#X obj 4928 1952 snarezwo;
+#X text 4469 1954 - [snarezwo]: Erzeugt eine elektronische Snaredrum.
+Kann an [steps] \, [sequenzer] \, [pad] oder [taste] angeschlossen
+werden.;
+#X text 4474 1418 - [kick]: Erzeugt eine elektronische Bassdrum. Kann
+an [steps] \, [sequenzer] \, [pad] oder [taste] angeschlossen werden.
+;
+#X text 4467 1677 - [snare]: Erzeugt eine elektronische Snaredrum.
+Kann an [steps] \, [sequenzer] \, [pad] oder [taste] angeschlossen
+werden.;
+#X text 4469 2218 - [hihat]: Erzeugt ein elektronisches HiHat. Kann
+an [steps] \, [sequenzer] \, [pad] oder [taste] angeschlossen werden.
+;
+#X text 4467 2435 - [toms]: Erzeugt eine elektronische Tom. Kann an
+[steps] \, [sequenzer] \, [pad] oder [taste] angeschlossen werden.
+;
+#X text 4472 643 Mit der Funktion 'block pads' können die tiefen Tasten
+\, die typischerweise durch Pad-Controller angesteuert werden \, blockiert
+werden. So können in einem Patch sowohl Module über [pad] \, als
+auch Module über [midiinput] angesteuert werden \, ohne dass Zweitere
+durch die Pads ausgelöst werden.;
+#X obj 5062 488 midikeyboard;
+#X text 4473 560 [midikeyboard] gibt nur Daten vom externen Midikeyboard
+aus \, ignoriert also die Laptoptastatur.;
+#X text 4471 465 - [midiinput] und [midikeyboard]: Die Tastatur kann
+wie eine Klaviatur gespielt werden und/oder ein Midikeyboard kann angeschlossen
+und gespielt werden. Sollten an Klangerzeuger wie [osci] \, [grin]
+oder [keysa] angeschlossen werden. Mit [loopmidi] können Melodielinien
+aufgenommen und in einer Schleife abgespielt werden.;
+#X text 4473 605 Die Module geben nur die Steuerbefehle für das Klaviaturspiel
+aus.;
+#X obj 7016 300 pad;
+#X text 6597 290 - [pad]: Mit diesem Modul können Pad-Controller über
+Midi in das Patch eingebaut werden \, um Sounds auszulösen oder Prozesse
+zu steuern.;
+#X text 6597 395 Zuerst muss das gewünschte Pad am controller benutzt
+werden \, damit das Objekt es erkennt. Dann muss auf 'zuweisen' geklickt
+werden \, damit das Modul die Kontrolldaten des entsprechenden Pads
+ausgibt.;
+#X text 6597 338 Es gibt Töne mit velocity (Anschlagstärke) aus und
+kann an Module wie [kick] \, [snare] \, [hihat] \, [sample] \, [simple]
+oder [adsr] angeschlossen werden.;
+#X obj 449 1919 delayertoo;
+#X text 30 2029 Das Modul hat einen Eingang für das Audiosignal. Über
+die anderen Eingänge können mit Midibefehlen die Regler gesteuert
+werden. Das Modul gibt das veränderte Audiosignal wieder aus.;
+#X text 27 1920 - [delayertoo]: Echoeffekt.;
+#X text 29 1947 Dieses Modul ist mit [delayer] identisch \, nur dass
+der volume-Reglers durch eine dry/wet-Regler ersetzt wurde. So kann
+neben dem Anteil des Echos im Signal auch der Anteil des Originals
+geregelt werden. Ist 'dry/wet' auf '1' \, ist also nur das Echo zu
+hören.;
+#X obj 450 2162 syncdelay;
+#X text 36 2161 - [syncdelay]: Echoeffekt \, der rhythmisch synchronisiert
+werden kann.;
+#X text 38 2200 Dieses Delay-Modul empfängt Tempodaten (von [clock]
+oder [levlink]) empfängt. Diese werden dann genutzt \, um das Delay
+auf einem eingehenden Signal rhythmisch zu synchronisieren.;
+#X text 39 2253 Das Modul hat einen Eingang für das Audiosignal. An
+den zweiten Eingang müssen Tempoinformationen (von [clock] oder [levlink])
+angeschlossen werden. Über die anderen Eingänge können mit Midibefehlen
+die Regler gesteuert werden. Das Modul gibt das veränderte Audiosignal
+wieder aus.;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;

@@ -1,0 +1,31 @@
+looper 0 3 0 0\ 0\ 0\ 0\ 0\ 0;
+keysa 0 2.64583 77.6111 59.6515 0 4.71714 33.6939 50.1002 C:/Users/Win7\ Pro\ x64/Desktop/Loop-Ensemble/LoopTools/Aktuelles\ Set/Beispiele/Beispiel\ II/Beispiel\ II-2-keysaTestSample.wav
+;
+midiloop 0 3 1 C:/Users/Win7\ Pro\ x64/Desktop/Loop-Ensemble/LoopTools/Aktuelles\ Set/Beispiele/Beispiel\ II/Beispiel\ II-2-midiloopSeq
+;
+output 2 127;
+simple 2 0 127 31.75 0 0 ;
+input 2 63.5;
+vocodo 2 127 0 35 10 50.1 63.5 0;
+output 2 127;
+output 2 127;
+down 2 12.2767 1;
+output 2 127;
+input 3 63.5;
+room 3 0.838367 0.85 0.533898;
+keysa 3 0 71.4375 74.4554 0 5.88347 50.5408 39.7329 C:/Users/Win7\ Pro\ x64/Desktop/Loop-Ensemble/LoopTools/Aktuelles\ Set/Beispiele/Beispiel\ I/Beispiel\ I-6-keysaTestSample.wav
+;
+delayer 4 0.999688 127 0;
+input 4 63.5;
+osci 5 3 3.526 1.27 73.8414 19.4388 0.500948 63.5;
+verb 6 0.9 0.5 0.85;
+clock 6 6.56694;
+sequenzer 6 120.178 35.0038 0 ;
+clock 8 11.0268;
+delayer 9 0.999688 127 0;
+volume 9 1 63.5;
+phaser 9 78.8276 0 0.757263 0;
+osci 22 0 3.526 1.27 1.27 63.5 0.500948 63.5;
+room 77 0.349633 0.85 0.559322;
+volume 187 1 63.5;
+input 2536 63.5;

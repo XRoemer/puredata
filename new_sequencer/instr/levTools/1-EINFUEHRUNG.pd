@@ -1,0 +1,288 @@
+#N canvas 0 0 1423 798 10;
+#X obj -286 -348 cnv 15 1200 3100 empty empty Installation 20 32 0
+28 -228856 -1 0;
+#X obj -286 -409 cnv 15 1200 60 empty empty lev-tools 140 30 0 56 -99865
+-260097 0;
+#X text -237 316 Die Module werden in sogenannten PATCHES angeordnet
+und miteinander verbunden. Die Verbindungen sorgen dafür \, dass die
+digitalen Klang- oder Steuerdaten durch die Module fließen können.
+Daher spricht man vom Datenstromprinzip. Beim Erstellen der Patches
+sollte also immer das Prinzip des Datenflusses im Kopf behalten werden:
+;
+#X text -239 401 Module erzeugen Klangsteuerdaten bzw. Klangdaten (bzw.
+nehmen sie per Mikrofon auf) und so entspringt ein Datenfluss. Dieser
+kann nun weiter durch andere Module fließen \, wodurch er sich ständig
+verändert. Er kann sich auch gabeln und womöglich wieder zusammenfließen.
+Am Ende mündet die Flüsse in einem eigenen oder einem gemeinsamen
+Ausgang. Hier werden die Klangdaten in elektrische Spannung verwandelt
+und über die Lautsprecher ausgegeben.;
+#X obj -252 285 cnv 5 5 5 empty empty Patches/Datenstrom 0 12 0 22
+-233017 -66577 0;
+#X obj -252 114 cnv 5 5 5 empty empty Module 0 12 0 22 -233017 -66577
+0;
+#X text -236 144 Mit dieser Toolbox können Klänge erzeugt und bearbeitet
+werden. Dafür stehen eine Vielzahl sogenannter MODULE zur Verfügung.
+Diese Module können Klänge erzeugen \, aufnehmen \, ausgeben \, verändern
+\, kontrollieren \, beschleunigen \, verlangsamen \, etc.. Andere Module
+erfüllen Aufgaben wie das Speichern oder Laden von Einstellungen \,
+die Aufnahme aller erzeugen Klänge oder die Verbindung von Rechnern
+in einem Netzwerk (damit im gleichen Tempo Musik gemacht werden kann).
+;
+#X obj 395 35 cnv 5 5 5 empty empty Steuerdaten/Klangdaten 0 12 0 22
+-233017 -66577 0;
+#X text 410 141 KLANGDATEN sind der digitale Datenstrom aus Nummern
+\, der letztlich das ist \, was nach Umwandlung in analoge elektronische
+Signale aus den Lausprechern kommt und also gehört werden kann. Die
+Klangdaten sind recht fein Aufgelöst. Die Tools arbeiten mit 44100
+sogenannten Samples pro Sekunde \, die in Blöcken von 64 Samples verarbeitet
+werden. Dieser Datenstroim ist relativ groß und seine Verarbeitung
+braucht vergleichsweise viel Leistung des Rechners.;
+#X obj -263 1070 cnv 5 5 5 empty empty Eingänge/Ausgänge 0 12 0 22
+-233017 -66577 0;
+#X text 412 274 STEUERDATEN sind Kontrollbefehle \, die Klangerzeugungsprozesse
+oder die Verarbeitung von Klängen steuern. Zum Beispiel sind die Informationen
+über den Druck einer Taste auf einer Klaviatur (welche Taste \, wie
+stark würde sie gedrückt) Kontrolldaten. Diese werden dann an ein
+Klangerzeugungsmodul weitergeleitet \, wo die Daten zur Klangerzeugung
+verwendet werden. Ein anderes typisches Beispiel für Kontrolldaten
+sind die Daten \, die Rhythmus und Tempo steuern. Die Erzeugung und
+Verarbeitung dieser Daten ist in der Regel nicht so Leistungsintensiv
+wie die der Klangdaten.;
+#X obj 394 529 cnv 5 5 5 empty empty Patch-Organisation: 0 12 0 22
+-233017 -66577 0;
+#X obj -260 762 cnv 5 5 5 empty empty Modulerzeugung 0 12 0 22 -233017
+-66577 0;
+#X text -242 626 Die Patchdateien haben übrigens ie Endung .pd. Hierbei
+könnte auch auffallen \, dass auch die Moduldateien die Endung .pd
+haben. Das liegt daran \, dass auch die Module im Prinzip Patches sind.
+Öffnet man die Moduldateien \, so kann man in ihren PURE DATA - Code
+betrachten und sogar verändern und die Veränderungen speichern. Sollte
+dadurch aus Versehen ein Modul kaputt gemacht werden \, so sollte dieses
+einfach durch ein korrekte Datei ersetzt werden.;
+#X obj 186 845;
+#X obj 186 887 modul 55;
+#X text -248 960 Hat man erfolgreich ein Modul erzeugt \, so sollte
+es ähnlich wie das Inputmodul rechts aussehen.;
+#X obj 186 966 input 44;
+#X obj 394 -285 cnv 5 5 5 empty empty Editiermodus 0 12 0 22 -233017
+-66577 0;
+#X text 410 -251 PURE DATA kann entweder im EDITIERMODUS oder im SPIELMODUS
+sein.;
+#X text 410 -206 Der EDITIERMODUS wird im Menü unter Bearbeiten-Editiermodus
+an- und abgeschaltet (Tastatur: STRG + E). Im Editiermodus können
+neue Module erstellt werden \, schon erstellte Module können auf der
+Patchoberfläche erschoben werden und Module können miteinander verbunden
+werden. Die Module selber \, also ihre Schalter und Regler \, können
+im Editiermodus nicht benutzt werden.;
+#X text 409 -100 Ist der Editiermodus abgeschaltet \, so ist automatisch
+der SPIELMODUS aktiviert. Das Patch kann jetzt nicht mehr bearbeitet
+werden \, dafür können die Regler und Schalter der Module verwendet
+werden.;
+#X obj 519 726 presets;
+#X obj 396 1436 cnv 5 5 5 empty empty Netzwerk 0 12 0 22 -233017 -66577
+0;
+#X obj 198 1702 record;
+#X obj 207 1838 output 77;
+#X text 425 1473 Die lev-tools sind LINK-fähig. LINK ist eine von
+der Firma Ableton entwickelte Software \, mit der Musiksoftware auf
+unterschiedlichen Geräten (Computer \, Smartphones \, Tablets \, etc.)
+miteinander verbunden werden kann \, damit die erzeugten Klänge im
+gleichen Tempo abgespielt werden können. Diesen Vorgang nennt man
+auch Synchronisation.;
+#X obj 184 1137 delayer 1;
+#X obj -264 1657 cnv 5 5 5 empty empty Aufnahme 0 12 0 22 -233017 -66577
+0;
+#X obj -263 1981 cnv 5 5 5 empty empty Reglerbedienung 0 12 0 22 -233017
+-66577 0;
+#X text -237 2013 Ein kleiner Tipp zur Bedienung der Regler der Module:
+Wenn man vor dem Anklicken der Regler die Shift-Taste drückt und festhält
+\, so können die Einstellungen sehr langsam und fein gemacht werden.
+Bedient man die Regler ohne festgehaltene Shift-Taste \, so sind die
+Veränderungen viel gröber und schneller.;
+#X text 419 1877 Wenn das eigene Gerät nicht ganz synchron mit den
+anderen läuft \, was aus verschiedenen Gründe passieren kann \, so
+kann der Unterschied mit dem Regler 'Korrektur' ausgeglichen werden.
+Hier wird das Temposignal 127 ms nach vorne oder nach hinten geschoben
+und kann so perfekt an das gemeinsame Tempo angeglichen werden.;
+#X text 416 1259 Tipp: Für eine bessere Übersicht oder für Notizen
+aller Art können Kommentare ins Patch geschrieben werden. Dafür geht
+man im Menü auf 'Einfügen' - Kommentar (Tastenkombi: Strg + 5). Es
+wird dann ganz ähnlich wie bei den Objekten ein Textkommentar im Patch
+angelegt. Klickt man diesen an \, kann man diesen Text frei bearbeiten.
+;
+#X obj -267 2129 cnv 5 5 5 empty empty Modulation 0 12 0 22 -233017
+-66577 0;
+#X obj -255 2317 modu;
+#X obj 7 2316 modurand;
+#X text -239 2508 Diese Module geben Steuerdaten aus (s. Steuerdaten/Klangdaten).
+Sie können an alle Moduleingänge angeschlossen werden \, die Kontrolldaten
+empfangen und steuern dann automatisch die jeweiligen Regler.;
+#X text -242 1251 Nun könnte es verwirren \, dass fast alle Module
+neben den eins bis zwei Eingägen links noch andere Eingänge rechts
+davon haben. Diese sind dafür da \, um MidiController oder Modulationsmodule
+anzuschließen \, mit denen dann die Regler und Schalter der Module
+gesteuert werden können. Diese Funktion der Tools kann eigentlich
+nur von Fortgeschrittenen genutzt werden.;
+#X text -239 2582 Die Steuerdaten der Modulationsmodule haben MIDIformat.
+Ihre Werte bewegen sich also immer zwischen 0 und 127;
+#X text -237 2259 Modulation wird durch die Module [modu] oder [modurand]
+gesteuert. Mehr zu diesen Modulen findet sich in der Modulliste.;
+#X obj 303 2396 control;
+#X obj 315 2538 taste;
+#X obj 307 2659 nummer;
+#X obj 607 2167 midiinput;
+#X obj 392 2015 cnv 5 5 5 empty empty Controller 0 12 0 22 -233017
+-66577 0;
+#X text 418 2111 Wird das Modul [midiinput] an ein geeignetes Modul
+angeschlossen ([osci] \, [keysa] \, [grin] \, etc.) \, so kann über
+die Keyboardtastatur des Computers das Modul wie mit einer Klaviatur
+gespielt werden.;
+#X text 417 2222 Die Tastaturklaviatur hat ihr c auf der Taste a. Die
+weißen Tasten sind also auf den Tasten a bis k gelegen. Die schwarzen
+Tasten finden sich dementsprechend auf den Tasten w (cis) \, e (dis)
+\, t (fis) \, z (gis) und u (ais). Mit y und x kann die aktuelle Oktave
+der Keyboardklaviatur runter- bzw. hochgeschaltet werden.;
+#X text 418 2314 Ist ein externer MIDIcontroller mit Klaviatur an den
+Computer angeschlossen \, so kann über das Modul [midiinput] mit dieser
+Klaviatur gespielt werden. Dafür muss der MIDIcontroller in Pure Data
+aktiviert werden (unter Einstellungen).;
+#X text 418 2054 Die lev-Tools können über CONTROLLER gesteuert werden.
+Dazu gehört neben externen MIDI-Controllern auch die Tastatur. Diese
+Funktion sollte nur von Fortgeschrittenen genutzt werden.;
+#X text -236 2166 MODULATION ist die automatische Bedienung von Reglern
+in den Modulen. Einstellungen in den Modulen werden also durch andere
+Module automatisch verändert und müssen nicht mehr per Hand gesteuert
+werden. Modulation wird häufig eingesetzt \, um Klänge lebendiger
+zu gestalten. Diese Funktion sollte nur von Fortgeschrittenen genutzt
+werden.;
+#X text 420 2404 Das Modul [control] empfängt MIDI-Steuerdaten von
+externen MIDI-Geräten mit Reglern. Mit 'zuweisen' wird ein Regler
+im Modul festgelegt. Wird [control] dann an einen Steuereingang an
+den Modulen angeschlossen (s. Eingänge/Ausgänge) \, so kann der Regler
+im Modul über den Regler des MIDIcontrolles gesetuert werden.;
+#X text 422 2536 Das Modul [taste] funktioniert ähnlich wie das Modul
+[control]. Hier werden Tastaturtasten als Schalter zugewiesen. So können
+per Tastendruck z.B. Module an- und ausgeschaltet werden oder andere
+Ereignisse ausgelöst werden \, z.B. das Auslösen einer Kickdrum mit
+dem Modul [kick].;
+#X text 426 2659 Das Modul [nummer] kann an das Modul [taste] angeschlossen
+werden. Dann werden per Tastendruck Zahlen an passende Moduleingänge
+geschickt. Diese Funktion kann hauptsächlich dafür eingesetzt werden
+\, in [sequenzer] oder [steps] die Sequenzen auf den Speicherplätzen
+1-8 per Tastendruck aufzurufen.;
+#X obj -255 542 cnv 5 5 5 empty empty Patcherzeugung/-bearbeitung 0
+12 0 22 -233017 -66577 0;
+#X text 409 -31 Tipp: Drückt und hält man im Editiermodus die STRG-Taste
+\, so ist man vorübergehend im Spielmodus.;
+#X obj 543 1582 levlink;
+#X text 419 1756 Das Modul \, das die Verbindung ermöglicht \, wird
+mit [levlink] erzeugt. Die beteiligten Geräte müssen im gleichen
+WLAN- oder LAN-Netzwerk sein. Dann muss nur noch auf verbinden geklickt
+werden und das Modul spuckt das Tempo aus \, in dem alle beteiligten
+Instrumente spielen. Wie das Modul [clock] kann es nun an alle Module
+([Steps] \, [Sequenzer] \, [loopmidi] \, [looper] \, usw.) angeschlossen
+werden \, die in einem festgelegten Tempo funktionieren.;
+#X text -238 1777 Immer \, wenn Record aktiviert wird \, öffnet sich
+ein Fenster \, in dem eingegeben werden kann \, wo und unter welchem
+Namen die Aufnahme gespeichert werden soll.;
+#X text -238 1896 Sowohl im Input- als auch im Outputmodul sind CLIPPING-Anzeigen
+eingebaut. Wenn das Signal am Eingang oder Ausgang zu laut ist und
+deswegen übersteuert \, blinken diese Anzeigen rot.;
+#X obj 660 530 cnv 5 5 5 empty empty Speichern/laden 0 12 0 22 -233017
+-66577 0;
+#X text 409 573 Zuerst muss das Patch selbst als .pd-Datei gespeichert
+werden.;
+#X text 410 607 Dafür muss in Pure Data unter 'Datei' 'Speichern'
+oder 'Speichern unter' ausgewählt werden. Dann kann die Patchdatei
+in einem Ordner der Wahl unter einem Namen der Wahl gespeichert werden.
+;
+#X text 413 823 Damit es alles speichern kann \, müssen alle Module
+mit einer EIGENEN HAUSNUMMER erzeugt worden sein (Beispiel: [input
+1] \, [volume 2] \, usw.).;
+#X text 412 684 Das Modul [presets] dient dann zum SPEICHERN und LADEN
+aller Einstellungen \, Sequenzen und Samples in einem Patch.;
+#X obj -287 52 cnv 15 2 2 empty empty Einführung 20 32 0 28 -228856
+-1 0;
+#X text -242 -282 Um die levTools in Purr Data einfach aufrufen zu
+können \, muss der Ordner \, indem die Tools gespeichert sind unter
+'Bearbeiten - Einstellungen - Startup' in den Suchpfaden angegeben
+werden.;
+#X text -241 -217 Dafür muss unter 'Suchpfade' auf 'neu' geklickt
+werden \, um dann den Ordner Pfad einzugeben (z.B. mit copy und paste
+aus dem Dateibrowser);
+#X text -241 -164 Unter Windows sollte der eingegebene Pfad etwa so
+aussehen:;
+#X text -199 -140 C:/Users/username/Desktop/levTools;
+#X text 28 -140 - Achtung auf die Richtung der Schrägstriche!;
+#X text -241 -111 Unter Ubuntu/OSx sollte der eingegebene Pfad etwa
+so aussehen:;
+#X text -201 -77 /home/lev/Schreibtisch/levTools;
+#X text -240 -48 Nachdem der Ordner eingegeben wurde \, sollte Purr
+Data einmal NEU GESTARTET werden. Dann sollten in einem neuen Patch
+die Module aufzurufen sein.;
+#X text -241 578 Patches werden erzeugt \, indem nach dem Start von
+PURE DATA unter Datei-neu ausgewählt wird.;
+#X text -246 800 Hat man ein neues Patch erzeugt \, so können die
+Module erzeugt werden. Dafür wählt man im Menu Einfügen-Objekt (Tastatur:
+STRG + 1). Nun führt man unter dem Mauszeiger ein leeres Objekt mit
+sich (s. rechts). Man bewegt dieses an den gewünschten Ort auf dem
+Bildschirm. Dann gibt man den Namen des gewünschten Moduls UND eine
+Zahl \, die dem Modul eine Art Hausnummer gibt (s. rechts). Jedes Modul
+muss eine eigene Nummer haben \, damit später das Speichern funktioniert.
+;
+#X text -242 1108 Die Module haben Ein- und Ausgänge. Je nach Aufgabe
+des Moduls hat es sowohl Ein- als auch Ausgang \, zwei Eingänge und
+einen Ausgang oder keinen Eingang und einen Ausgang (s. dazu die Beschreibung
+der einzelnen Module). Die Eingänge finden sich immer oben links an
+den Modulen. Der Ausgang befindet sich unten links. Man erkennt Ein-
+und Ausgänge an den kurzen dicken Linien (Warum einige Linien dicker
+sind als andere \, wird unter STEUERDATEN/KLANGDATEN erklärt.);
+#X text -241 1364 So verbindet man zwei Module:;
+#X text -239 1496 2 - Bewegt man mit gehaltener Maustaste die Maus
+\, so sieht man nun das mitgeführte Kabel;
+#X text -175 1440 Tipp: Wenn man mit dem Mauszeiger an der richtigen
+Klickposition ist \, verändert er sich zu einer zugreifenden Hand
+und es blinkt.;
+#X text -179 1595 Welche Eingänge/Ausgänge sich verbinden lassen
+\, ist unter 'Steuerdaten/Klangdaten' zu lesen.;
+#X text -242 1541 3- Das mitgeführte Kabel zu einem passenden Eingang
+eines anderen Moduls führen (an der richtigen Stelle blinkt es) und
+dort die Taste loslassen.;
+#X text -239 1696 Mit dem Modul [record] kann einfach alles aufgenommen
+werden \, was über einen oder auch mehrere [output]-Ausgänge auch
+zu hören ist. In jedem Output-Modul kann eingestellt werden \, ob
+der hier ausgegebene Sound mit aufgenommen werden soll \, oder nicht.
+;
+#X text -240 1390 1 - Im Editiermodus (s. oben) mit der linken Taste
+auf einen Ausgang eines Moduls (in der Regel links unten) klicken und
+die Maustaste festhalten.;
+#X text 412 436 Verbindungen \, die Klangdaten übertragen sind dicker
+als die Verbindungen \, die Kontrolldaten übertragen. Außerdem sind
+die Ein- und Ausgänge für Audiodaten an den Modulen etwas dicker
+und farblich deutlich dunkler.;
+#X text 410 71 Modulen erzeugen bzw. bearbeiten entweder Steuerdaten
+oder Klangdaten. Klangdatenausgänge können nicht an Steuerdateneingänge
+angeschlossen werden und andersherum genauso.;
+#X text 416 1051 In einigen Modulen können Samples \, Sequenzen \,
+etc. auch einzeln gespeichert werden \, z.B. um sie in anderen Patches
+zu laden und zu verwenden.;
+#X text 416 989 Um das Presets wieder zu laden \, muss diese Hauptdatei
+mit 'load' geöffnet werden.;
+#X text 414 882 Jedes Preset sollte mit einem deutlichen Namen in einem
+NEUEN ORDNER gespeichert werden \, da dort beim Speichern in der Regel
+viele Dateien erzeugt werden. Für jede Sequenz \, jedes Sample \,
+etc. wird eine eigene Datei erzeugt.;
+#X text 415 957 Die Hauptdatei trägt dann den beim Speichern eingegebenen
+Namen.;
+#X text 416 1136 Leider können die Verknüpfungen mit den Dateien
+NICHT MIT KOPIERT werden. Wenn der Ordner also verschoben wird \, z.B.
+auf einen anderen Computer \, dann müssen alle Samples und Sequenzbänke
+einmal manuell neu in die Module geladen werden. Wird dann an diesem
+neuen Ort über [presets] wieder ein Hauptdatei gespeichert \, so werden
+alle Verknüpfungen wieder mit gespeichert und beim nächsten Mal wird
+alles wieder automatisch geladen.;
+#X text -151 17 VORSICHT: Die der derzeitige Version von Purr Data
+kommt leider nicht mit ö \, ä und ü in den Suchpfaden klar.;
+#X text -238 1838 Nach einer einstündigen Aufnahmezeit schaltet sich
+das Record Modul übrigens selbst ab. Ansonsten würde die Audiodatei
+geschrieben werden \, bis die Festplatte voll ist.;

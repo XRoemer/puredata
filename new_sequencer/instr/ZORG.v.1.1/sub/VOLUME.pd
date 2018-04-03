@@ -1,0 +1,114 @@
+#N canvas 297 27 644 629 10;
+#X obj -109 506 line~;
+#X obj 117 144 mknob 60 60 0 1 0 0 VCAV VCAV-r VOLUME 15 70 0 8 -262144
+-1 -1 5500 1;
+#X obj -124 560 *~;
+#X obj 38 100 loadbang;
+#X msg 38 125 0.33;
+#X obj 127 235 mknob 40 40 1 10 0 0 VCAG VCAG-r GAIN 10 50 0 8 -262144
+-1 -1 3900 1;
+#X obj -87 555 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj -87 529 loadbang;
+#X obj -87 604 tabwrite~ OUT_monitor;
+#X obj -87 578 metro 100;
+#X obj 102 341 cnv 15 89 69 empty empty empty 20 12 0 14 -257985 -66577
+0;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array OUT_monitor 2205 float 0;
+#X coords 0 1 2204 -1 89 69 2 0 0;
+#X restore 102 341 graph;
+#X obj -124 403 x100;
+#X obj -123 370 r~ VCA;
+#X obj 106 440 bng 15 250 50 0 empty empty SAVE 17 7 0 10 -1 -258113
+-86277;
+#X obj 353 532 del 10;
+#X msg 353 560 start;
+#X msg 245 423 stop;
+#X obj 245 577 writesf~ 2;
+#X obj 106 421 bng 15 250 50 0 empty empty LOAD 17 7 0 10 -1 -4034
+-13381;
+#X obj 245 479 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 153 518 bng 24 250 50 0 empty empty REC 3 12 0 10 -1 -258113
+-258113;
+#X msg 278 452 1;
+#X msg 245 451 0;
+#X obj 245 501 metro 500;
+#X msg 245 540 open ../out.wav;
+#X text 135 111 VCA;
+#X obj 334 476 sel 0 1;
+#X obj 334 504 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 353 504 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 130 520 vradio 10 1 0 2 waveREC waveREC-r empty 0 -8 0 10 -262144
+-1 -1 0;
+#X text 119 527 1;
+#X text 118 515 0;
+#X text 103 304 PATCH;
+#X obj 199 436 Zread;
+#X obj 197 455 Zwrite;
+#X floatatom -51 289 5 0 0 0 - - -;
+#X obj -51 315 sel 0;
+#X msg -24 341 1;
+#X msg -51 341 0;
+#X obj -29 227 r notaOn/Off;
+#X obj -51 225 vradio 10 1 0 2 VCFs2 VCFs2-r empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj -51 262 switch 1;
+#X obj 106 520 vradio 10 1 0 2 AttackWaveRec AttackWaveRec-r empty
+0 -8 0 10 -228856 -99865 -228856 0;
+#X obj -125 345 r~ drum;
+#X obj -123 604 dac~;
+#X symbolatom 103 323 14 0 0 3 - patchname-r patchname;
+#X text 104 496 WAVE RECORDER;
+#X msg 213 262 \; OUT_monitor xlabel -1 -1 3 3 \; OUT_monitor ylabel
+0 1 2 3 4 5;
+#X text 106 539 A;
+#X text 125 539 Def;
+#X connect 0 0 2 1;
+#X connect 1 0 0 0;
+#X connect 2 0 8 0;
+#X connect 2 0 18 0;
+#X connect 2 0 18 1;
+#X connect 2 0 45 0;
+#X connect 2 0 45 1;
+#X connect 3 0 4 0;
+#X connect 3 0 5 0;
+#X connect 4 0 1 0;
+#X connect 5 0 12 1;
+#X connect 6 0 9 0;
+#X connect 7 0 6 0;
+#X connect 9 0 8 0;
+#X connect 12 0 2 0;
+#X connect 13 0 12 0;
+#X connect 14 0 35 0;
+#X connect 15 0 16 0;
+#X connect 16 0 18 0;
+#X connect 17 0 18 0;
+#X connect 17 0 23 0;
+#X connect 19 0 34 0;
+#X connect 20 0 24 0;
+#X connect 22 0 20 0;
+#X connect 23 0 20 0;
+#X connect 24 0 21 0;
+#X connect 25 0 18 0;
+#X connect 27 0 28 0;
+#X connect 27 1 29 0;
+#X connect 28 0 17 0;
+#X connect 29 0 25 0;
+#X connect 29 0 15 0;
+#X connect 29 0 22 0;
+#X connect 30 0 27 0;
+#X connect 36 0 37 0;
+#X connect 37 0 39 0;
+#X connect 37 1 38 0;
+#X connect 38 0 30 0;
+#X connect 39 0 30 0;
+#X connect 40 0 42 1;
+#X connect 41 0 42 0;
+#X connect 42 0 36 0;
+#X connect 43 0 41 0;
+#X connect 44 0 12 0;
+#X coords 0 -1 1 1 93 524 2 100 100;

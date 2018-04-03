@@ -1,0 +1,113 @@
+#N canvas 293 84 1423 798 10;
+#X obj 6 -52 cnv 15 1200 60 empty empty Beispiele-I 140 30 0 56 -99865
+-260097 0;
+#X obj 6 9 cnv 15 5000 2000 empty empty empty 20 32 0 28 -228856 -1
+0;
+#X obj 102 377 midiinput;
+#X obj 102 440 osci 2;
+#X text 140 304 Ein sehr simpler Synthesizer mit Filter und Delay.
+;
+#X obj 104 870 delayer 2;
+#X obj 104 630 filter 1filter 2;
+#X obj 86 1079 output 2;
+#X obj 689 363 input 2;
+#X obj 803 677 verb 1;
+#X obj 690 467 grainy 2;
+#X obj 579 774 delayer 66;
+#X obj 612 663 zerre 4;
+#X obj 580 980 filter 4;
+#X obj 685 1239 volume 5;
+#X obj 803 854 tapedelay 8;
+#X obj 664 1432 output 2;
+#X obj 685 1342 limits;
+#X text 765 1420 Anschließen zum Ausprobieren!;
+#X text 187 1067 Anschließen zum Ausprobieren!;
+#X obj 1479 397 sequenzer 1;
+#X obj 1479 732 osci 77;
+#X obj 1478 916 filter 6;
+#X obj 1479 1353 phaser 8;
+#X obj 1926 1041 output 2;
+#X text 1560 1562 Anschließen zum Ausprobieren!;
+#X obj 2285 294 steps 1;
+#X obj 2285 428 kick 1;
+#X obj 2490 546 snare 2;
+#X obj 2490 418 steps 1;
+#X obj 2361 773 room 15;
+#X obj 2338 1024 output 2;
+#X text 2438 1008 Anschließen zum Ausprobieren!;
+#X obj 2532 117 clock 6;
+#X text 2639 213 Ein einfache Drummachine mit Halleffekt. Die beiden
+Stepsequenzer können über die Clock synchronisiert werden ('verbinden'
+unter 'Netzwerk').;
+#X obj 3255 302 steps 66;
+#X obj 3311 426 input 45;
+#X obj 3256 732 graindelay 4;
+#X obj 3237 948 output 2;
+#X text 3337 932 Anschließen zum Ausprobieren!;
+#X obj 3255 538 sampler 1;
+#X text 3261 229 Ein Sample wird mit einem Stepsequenzer ausgelöst.
+Zuerst muss im Sampler etwas über den Audioeingang des Computers aufgenommen
+werden. Das Signal wird schließlich durch einen [graindelay] geschickt.
+;
+#X obj 1479 1139 room 3;
+#X text 1500 335 Ein einfacher Synthesizer mit Sequenzer \, Filter
+\, Room und Phaser.;
+#X obj 342 348 presets;
+#X text 161 34 ALLE BEISPIELE MÜSSEN VOR DEM AUSPROBIEREN AN EINEN
+OUTPUT ANGESCHLOSSEN WERDEN! BITTE DAFÜR NACH UNTEN SCROLLEN.;
+#X text 254 277 BEISPIEL 1;
+#X text 805 314 Das Signal vom Mikrofoneingang des Computers wird durch
+eine Effektkette geschickt. Es entstehen recht wilde \, experimentelle
+Klänge. Man beachte auch [limits] am Ende der Kette. Dieses Modul
+sorgt dafür \, dass der Sound nicht übersteuert.;
+#X text 928 280 BEISPIEL 2;
+#X obj 964 381 presets;
+#X text 1643 313 BEISPIEL 3;
+#X obj 1957 312 presets;
+#X obj 2837 302 presets;
+#X text 2766 182 BEISPIEL 4;
+#X text 3395 195 BEISPIEL 5;
+#X obj 3653 191 presets;
+#X text 162 83 Im Ordner 'Beispiel I' finden sich für jedes Beispiel
+Presetdateien \, die geladen werden können. Diese zeigen typische
+Einstellungen für die Beispiele. Außerdem können dort auch Beispielaudiosamples
+für die Sampler und Sequenbzbänke für die Sequenzer geladen werden.
+;
+#X obj 1859 1256 catch~ signalleft;
+#X obj 1972 1256 catch~ signalright;
+#X obj 1863 1370 dac~;
+#X obj 1680 1477 *~;
+#X floatatom 1714 1443 5 0 0 0 - - -, f 5;
+#X obj 1921 799 print;
+#X connect 2 0 3 0;
+#X connect 3 0 6 0;
+#X connect 6 0 5 0;
+#X connect 8 0 10 0;
+#X connect 9 0 15 0;
+#X connect 10 0 9 0;
+#X connect 10 0 12 0;
+#X connect 11 0 13 0;
+#X connect 12 0 11 0;
+#X connect 13 0 14 0;
+#X connect 14 0 17 0;
+#X connect 15 0 14 0;
+#X connect 17 0 16 0;
+#X connect 17 0 16 1;
+#X connect 20 0 21 7;
+#X connect 21 0 22 0;
+#X connect 22 0 42 0;
+#X connect 23 0 60 0;
+#X connect 26 0 27 0;
+#X connect 27 0 30 0;
+#X connect 28 0 30 0;
+#X connect 29 0 28 0;
+#X connect 33 0 26 0;
+#X connect 33 0 29 0;
+#X connect 35 0 40 0;
+#X connect 36 0 40 1;
+#X connect 40 0 37 0;
+#X connect 42 0 23 0;
+#X connect 57 0 59 0;
+#X connect 58 0 59 1;
+#X connect 60 0 24 0;
+#X connect 61 0 60 1;

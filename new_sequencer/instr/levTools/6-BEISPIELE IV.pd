@@ -1,0 +1,131 @@
+#N canvas 0 3 1423 791 10;
+#X obj 6 -52 cnv 15 1200 60 empty empty Beispiele-IV 140 30 0 56 -99865
+-260097 0;
+#X obj 6 9 cnv 15 4500 2000 empty empty empty 20 32 0 28 -228856 -1
+0;
+#X text 176 40 ALLE BEISPIELE MÜSSEN VOR DEM AUSPROBIEREN AN EINEN
+OUTPUT ANGESCHLOSSEN WERDEN! BITTE DAFÜR NACH UNTEN SCROLLEN.;
+#X obj 355 693 steps 44;
+#X obj 606 841 steps 56;
+#X obj 606 965 simple 23;
+#X obj 131 685 kick 65;
+#X obj 356 818 snare 76;
+#X obj 357 1032 room 66;
+#X obj 132 903 delayer 64;
+#X obj 643 1666 output 55;
+#X obj 665 1547 volume 48;
+#X obj 604 1161 verb 721;
+#X obj 1069 990 steps 98;
+#X obj 1069 1115 toms 65;
+#X obj 1254 1121 steps 76;
+#X obj 1255 1247 hihat 4;
+#X obj 883 1314 volume 58;
+#X obj 1062 1403 volume 78;
+#X obj 723 539 presets;
+#X text 246 350 Dieses Beispiel zeigt eine umfangreiche Drummachine.
+Sie besteht aus 5 Stimmen: Bassdrum \, Snare \, Hihat 1 \, Hihat 2
+und Toms. Jede Stimme hat eigene Effekte wie Delay und Hall \, die
+ihren Klang etwas spektakulärer und räumlicher machen.;
+#X obj 1941 600 sequenzer 745;
+#X obj 1942 938 osci 746;
+#X text 741 1654 Anschließen zum Ausprobieren!;
+#X obj 1377 1494 volume 4756;
+#X obj 1943 1128 plopp 332;
+#X obj 129 558 steps 567;
+#X obj 3649 1644 output 1;
+#X obj 3621 365 input 1;
+#X obj 3556 692 delayer 1;
+#X obj 3405 597 zerre 1;
+#X obj 3834 922 verb 1;
+#X obj 3835 631 speed 1;
+#X obj 3696 1199 volume 1;
+#X obj 3134 580 presets;
+#X obj 3695 1327 limits 1;
+#X obj 3111 765 grainy 1;
+#X obj 3494 1159 down 1;
+#X obj 3113 1168 limits 3;
+#X obj 3109 1270 volume 4;
+#X obj 3844 1228 limits 4;
+#X obj 4027 552 room 5;
+#X obj 3663 1525 volume 748;
+#X obj 4043 1164 volume 15263;
+#X obj 3615 478 tor 64;
+#X obj 3115 958 graindelay 1234;
+#X obj 3514 915 room 57;
+#X obj 3837 1096 volume 2345;
+#X obj 3505 1355 volume 112;
+#X text 3134 375 Hier werden sehr experimentelle Sounds durch sehr
+viele Effektketten erzeugt \, in denen das Eingangssignal vom Computer
+auf unterschiedlichste Art verändert wird. Es werden also ganz verschiedene
+Klänge aus einer Quelle erzeugt.;
+#X text 3134 448 Man beachte außerdem \, dass ganz am Anfang ein [tor]
+dazwischen geschaltet ist \, dass das Signal nur durchlässt \, wenn
+es eine gewisse Lautstärke hat. So werden Feedbacks vermieden.;
+#X text 3134 508 Tipp: Versuch mal \, sehr Laut auf der Tastatur zu
+tippen.;
+#X text 3745 1628 Anschließen zum Ausprobieren!;
+#X text 379 318 BEISPIEL 1;
+#X text 3265 341 BEISPIEL 2;
+#X text 177 89 Im Ordner 'Beispiel IV' finden sich für jedes Beispiel
+Presetdateien \, die geladen werden können. Diese zeigen typische
+Einstellungen für die Beispiele. Außerdem können dort auch Beispielaudiosamples
+für die Sampler und Sequenbzbänke für die Sequenzer geladen werden.
+;
+#X text 246 427 Verbunden sind die [steps] - Sequenzer über ein [link-network]-Modul.
+Seuquenzer \, die an andere Link-Module angeschlossen sind \, egal
+ob im gleichen Patch oder in einem Patch auf einem anderen Computer
+\, können sich einklingen und im gleichen Tempo spielen. So kann diese
+Drum Machine z.B. mit dem Synthesizer weiter rechts synchronisiert
+werden \, der an eine weiteres [link-network]-Modul angeschlossen ist.
+Dafür muss dieser allerdings unter 'Netzwerk' verbunden werden.;
+#X obj 1228 330 levlink;
+#X obj 1942 425 levlink;
+#X connect 3 0 7 0;
+#X connect 4 0 5 0;
+#X connect 5 0 12 0;
+#X connect 6 0 9 0;
+#X connect 7 0 8 0;
+#X connect 8 0 11 0;
+#X connect 9 0 11 0;
+#X connect 12 0 11 0;
+#X connect 13 0 14 0;
+#X connect 14 0 17 0;
+#X connect 15 0 16 0;
+#X connect 16 0 18 0;
+#X connect 17 0 11 0;
+#X connect 18 0 11 0;
+#X connect 21 0 22 0;
+#X connect 21 0 25 1;
+#X connect 22 0 25 0;
+#X connect 24 0 11 0;
+#X connect 25 0 24 0;
+#X connect 26 0 6 0;
+#X connect 28 0 44 0;
+#X connect 29 0 46 0;
+#X connect 29 0 33 0;
+#X connect 30 0 29 0;
+#X connect 30 0 36 0;
+#X connect 31 0 47 0;
+#X connect 32 0 31 0;
+#X connect 33 0 35 0;
+#X connect 35 0 42 0;
+#X connect 36 0 45 0;
+#X connect 37 0 48 0;
+#X connect 38 0 39 0;
+#X connect 39 0 42 0;
+#X connect 40 0 42 0;
+#X connect 41 0 43 0;
+#X connect 43 0 42 0;
+#X connect 44 0 30 0;
+#X connect 44 0 41 0;
+#X connect 44 0 32 0;
+#X connect 45 0 38 0;
+#X connect 46 0 37 0;
+#X connect 47 0 40 0;
+#X connect 48 0 42 0;
+#X connect 57 0 3 0;
+#X connect 57 0 4 0;
+#X connect 57 0 13 0;
+#X connect 57 0 15 0;
+#X connect 57 0 26 0;
+#X connect 58 0 21 0;

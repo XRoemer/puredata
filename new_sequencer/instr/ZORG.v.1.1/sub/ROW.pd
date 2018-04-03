@@ -1,0 +1,96 @@
+#N canvas 0 0 450 300 10;
+#X obj 110 111 tgl 15 0 dr01-1 dr01-1-r empty 17 7 0 10 -162280 -257985
+-1 1 1;
+#X obj 110 126 tgl 15 0 dr01-2 dr01-2-r empty 17 7 0 10 -162280 -257985
+-1 1 1;
+#X obj 110 141 tgl 15 0 dr01-3 dr01-3-r empty 17 7 0 10 -162280 -257985
+-1 1 1;
+#X obj 110 156 tgl 15 0 dr01-4 dr01-4-r empty 17 7 0 10 -162280 -257985
+-1 1 1;
+#X obj 110 245 outlet;
+#X obj 110 171 tgl 15 0 dr01-5 dr01-5-r empty 17 7 0 10 -162280 -257985
+-1 1 1;
+#X obj 110 186 tgl 15 0 dr01-6 dr01-6-r empty 17 7 0 10 -162280 -257985
+-1 1 1;
+#X obj 110 201 tgl 15 0 dr01-7 dr01-7-r empty 17 7 0 10 -162280 -257985
+-1 1 1;
+#X obj 54 206 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 65 39 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 110 33 5 0 0 0 - - -;
+#N canvas 824 87 450 363 led01 0;
+#X obj 149 20 loadbang;
+#X obj 202 88 outlet;
+#X obj 212 118 outlet;
+#X obj 222 148 outlet;
+#X obj 232 178 outlet;
+#X obj 242 208 outlet;
+#X obj 252 238 outlet;
+#X obj 262 268 outlet;
+#X obj 112 46 inlet;
+#X obj 182 44 inlet;
+#X obj 149 71 del 50;
+#X obj 149 101 del 50;
+#X obj 149 131 del 50;
+#X obj 149 161 del 50;
+#X obj 149 191 del 50;
+#X obj 149 221 del 50;
+#X obj 149 251 del 50;
+#X obj 272 298 outlet;
+#X obj 149 281 del 50;
+#X obj 149 47 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X connect 0 0 19 0;
+#X connect 8 0 10 0;
+#X connect 9 0 10 1;
+#X connect 9 0 11 1;
+#X connect 9 0 12 1;
+#X connect 9 0 13 1;
+#X connect 9 0 14 1;
+#X connect 9 0 15 1;
+#X connect 9 0 16 1;
+#X connect 9 0 18 1;
+#X connect 10 0 1 0;
+#X connect 10 0 11 0;
+#X connect 11 0 2 0;
+#X connect 11 0 12 0;
+#X connect 12 0 3 0;
+#X connect 12 0 13 0;
+#X connect 13 0 4 0;
+#X connect 13 0 14 0;
+#X connect 14 0 5 0;
+#X connect 14 0 15 0;
+#X connect 15 0 6 0;
+#X connect 15 0 16 0;
+#X connect 16 0 7 0;
+#X connect 16 0 18 0;
+#X connect 18 0 17 0;
+#X connect 19 0 10 0;
+#X restore 65 66 pd led01;
+#X obj 65 -14 loadbang;
+#X obj 65 11 del 1000;
+#X obj 110 221 pack b f f f f f f f;
+#X obj 54 182 inlet;
+#X connect 0 0 14 1;
+#X connect 1 0 14 2;
+#X connect 2 0 14 3;
+#X connect 3 0 14 4;
+#X connect 5 0 14 5;
+#X connect 6 0 14 6;
+#X connect 7 0 14 7;
+#X connect 8 0 14 0;
+#X connect 9 0 11 0;
+#X connect 10 0 11 1;
+#X connect 11 0 0 0;
+#X connect 11 1 1 0;
+#X connect 11 2 2 0;
+#X connect 11 3 3 0;
+#X connect 11 4 5 0;
+#X connect 11 5 6 0;
+#X connect 11 6 7 0;
+#X connect 11 7 8 0;
+#X connect 12 0 13 0;
+#X connect 13 0 9 0;
+#X connect 14 0 4 0;
+#X connect 15 0 8 0;

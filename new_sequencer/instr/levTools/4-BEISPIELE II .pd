@@ -1,0 +1,115 @@
+#N canvas 0 0 1423 798 10;
+#X obj 6 -52 cnv 15 1200 60 empty empty Beispiele-II 140 30 0 56 -99865
+-260097 0;
+#X obj 6 7 cnv 15 4000 2000 empty empty empty 20 32 0 28 -228856 -1
+0;
+#X obj 89 530 keysa 3;
+#X obj 89 473 midiinput;
+#X obj 88 735 room 3;
+#X obj 87 948 flanger 9;
+#X obj 61 1174 output 2;
+#X text 161 1158 Anschließen zum Ausprobieren!;
+#X obj 147 346 input 4;
+#X text 258 410 Ein Sample kann mit [keysa] tonal über eine Klaviatur
+gespielt werden. Dazu muss zuerst in [keysa] etwas über den Audioeingang
+des Computers aufgenommen werden (z.B.. ein langes aaa). Der so entstandene
+Synthesizer wird schließlich durch eine kurze Effektkette aus Hall
+und Phaser geschickt.;
+#X obj 888 362 midiinput;
+#X obj 888 414 loopmidi;
+#X obj 688 669 osci 5;
+#X obj 1131 651 keysa;
+#X obj 976 885 room 77;
+#X obj 975 1107 down 2;
+#X obj 951 1258 output 2;
+#X text 1051 1242 Anschließen zum Ausprobieren!;
+#X obj 788 273 clock 8;
+#X obj 1188 544 input 3;
+#X text 1131 360 In diesem Beispiel ist zuerst zu sehen \, wie mit
+[loopmidi] eine Melodie geloopt werden kann. Die Steuerdaten der Melodie
+werden dann an den Oscillator und an den Sampler gesendet. Wird im
+Sampler ein tonales Sample aufgenommen und ist dieses richtig gestimmt
+\, so spielen die beiden Klangeerzeuger harmonisch zusammen.;
+#X text 1131 443 Schließlich kann dem Klang noch Raum hinzugefügt
+werden. Der Effekt 'down' das den Klang sehr stark verzerren.;
+#X obj 1862 465 sequenzer 6;
+#X obj 1860 295 clock 6;
+#X obj 1866 805 osci 22;
+#X obj 1870 1014 delayer 4;
+#X obj 1894 1400 output 2;
+#X text 1994 1384 Anschließen zum Ausprobieren!;
+#X obj 1906 1269 volume 9;
+#X text 1967 310 In diesem Beispiel soll gezeigt werden \, wie [looper]
+funktioniert. Der Sequenzer erzeugt eine Linie \, die mit etwas Delay
+interessanter gemacht wird. Diese kann vom Looper aufgenommen werden
+\, da beide von der Clock das gleiche Tempo bekommen. Der Sequenzer
+muss dafür unter 'Netzwerk' verbunden werden. Ist die Linie in einem
+4-taktigen Loop aufgenommen \, kann der Sequenzer andere Linien über
+der geloopten Melodie spielen.;
+#X text 161 34 ALLE BEISPIELE MÜSSEN VOR DEM AUSPROBIEREN AN EINEN
+OUTPUT ANGESCHLOSSEN WERDEN! BITTE DAFÜR NACH UNTEN SCROLLEN.;
+#X obj 294 735 presets;
+#X obj 1464 553 presets;
+#X obj 2342 340 presets;
+#X obj 2105 1092 looper;
+#X obj 3079 933 vocodo 2;
+#X obj 2816 732 input 2;
+#X obj 2944 662 simple 2;
+#X obj 3103 852 midiinput;
+#X obj 3027 1536 output 2;
+#X text 3122 1519 Anschließen zum Ausprobieren!;
+#X obj 2947 1202 verb 6;
+#X obj 3143 1209 delayer 9;
+#X obj 3047 1414 volume 187;
+#X obj 3005 555 input 2536;
+#X text 2889 434 Um den Klang interessanter zu machen \, sind dem Vocoder
+eine Delay und ein Reverbeffekt in zwei eigenen Wegen hintergeschaltet.
+;
+#X obj 3226 556 presets;
+#X text 2889 296 In diesem Beispiel wird der Vocoder vorgestellt. Er
+steht im Zentrum des Patches und bekommt sein Audiosignal vom Audioeingang
+des Computers. Alternativ kann auch [simple] genutzt werden \, um als
+Signal für den Vocoder ein Sample abzuspielen. Dazu braucht der Vocoder
+Steuerdaten zur Tonhöhe von einer Klaviatur. Diese bekommt er hier
+von [midiinput]. Alternativ könnte man auch [sequenzer] oder [loopmidi]
+nutzen. Nun wird das Klangverhalten des einkommenden Audiosignals auf
+die Klänge des Vocoders gelegt und es entsteht der typische Vocodereffekt.
+;
+#X text 2889 486 Wenn man übrigens in [vocodo] 'hold' aktiviert \,
+so gibt der Vocoder ständig Signal aus.;
+#X text 396 379 BEISPIEL 1;
+#X text 1278 314 BEISPIEL 2;
+#X text 2087 276 BEISPIEL 3;
+#X text 3027 264 BEISPIEL 4;
+#X text 162 83 Im Ordner 'Beispiel II' finden sich für jedes Beispiel
+Presetdateien \, die geladen werden können. Diese zeigen typische
+Einstellungen für die Beispiele. Außerdem können dort auch Beispielaudiosamples
+für die Sampler und Sequenbzbänke für die Sequenzer geladen werden.
+;
+#X connect 2 0 4 0;
+#X connect 3 0 2 0;
+#X connect 4 0 5 0;
+#X connect 8 0 2 1;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
+#X connect 11 0 13 0;
+#X connect 12 0 14 0;
+#X connect 13 0 14 0;
+#X connect 14 0 15 0;
+#X connect 18 0 11 0;
+#X connect 19 0 13 1;
+#X connect 22 0 24 0;
+#X connect 23 0 22 0;
+#X connect 23 0 34 0;
+#X connect 24 0 25 0;
+#X connect 25 0 28 0;
+#X connect 25 0 34 1;
+#X connect 34 0 28 0;
+#X connect 35 0 41 0;
+#X connect 35 0 42 0;
+#X connect 36 0 35 0;
+#X connect 37 0 35 0;
+#X connect 38 0 35 1;
+#X connect 41 0 43 0;
+#X connect 42 0 43 0;
+#X connect 44 0 37 1;

@@ -1,0 +1,4 @@
+#N canvas 0 0 1423 798 10;
+#X obj 43 37 presets;
+#X obj 179 37 record;
+#X obj 588 502 output 1;

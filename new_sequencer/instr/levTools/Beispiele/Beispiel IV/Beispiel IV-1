@@ -1,0 +1,51 @@
+link 0 63.5 36.7008;
+link 0 63.5 36.7008;
+down 1 12.6667 1;
+grainy 1 92.6939 127 86.0063;
+limit 1 1;
+volume 1 1 49.2449;
+speed 1 3;
+verb 1 0.95 0.152564 0.995;
+zerre 1 69.9796;
+delayer 1 18.7323 127 86.5072;
+input 1 63.5;
+output 1 127;
+limit 3 1;
+limit 4 1;
+volume 4 1 23.3265;
+hats 4 68.3002 127 0.00127 56.2758;
+room 5 0.99 0.949367 0.5;
+simple 23 0 98.7778 46.2184 0 90.7143 C:/Users/Win7 Pro x64/Desktop/Loop-Ensemble/LoopTools/Aktuelles Set/Beispiele/Beispiel IV/Beispiel IV-1-SimpleTestSample.wav
+;
+steps 44 120.064 2 1 C:/Users/Win7 Pro x64/Desktop/Loop-Ensemble/LoopTools/Aktuelles Set/Beispiele/Beispiel IV/Beispiel IV-1-SnareSeqBank
+;
+volume 48 1 63.5;
+output 55 127;
+steps 56 120.064 2 1 C:/Users/Win7 Pro x64/Desktop/Loop-Ensemble/LoopTools/Aktuelles Set/Beispiele/Beispiel IV/Beispiel IV-1-HatsSeqBank
+;
+room 57 0.500013 1 0.754237;
+volume 58 1 63.5;
+tor 64 113.521;
+delayer 64 4.03294 20.7347 20.2464;
+toms 65 52.7803 94.7119 23.4076 0.0127 34.9787 0 0 0;
+base 65 10.0093 15.0678 60.867 0.0127 127 0 0 0;
+room 66 0.224316 0.457595 0.584746;
+steps 76 120.064 2 1 C:/Users/Win7 Pro x64/Desktop/Loop-Ensemble/LoopTools/Aktuelles Set/Beispiele/Beispiel IV/Beispiel IV-1-HatsZweiSeqBank
+;
+snare 76 39.0041 127 29.9459 0.0127 45.0025 0 0 0;
+volume 78 1 42.7653;
+steps 98 120.064 2 1 C:/Users/Win7 Pro x64/Desktop/Loop-Ensemble/LoopTools/Aktuelles Set/Beispiele/Beispiel IV/Beispiel IV-1-TomsSeqBank
+;
+volume 112 1 19.4388;
+plopp 332 0 73.6215 11.3966 106.784 9.64163 55.7245 38.1518 74.4483
+;
+steps 567 120.064 2 1 C:/Users/Win7 Pro x64/Desktop/Loop-Ensemble/LoopTools/Aktuelles Set/Beispiele/Beispiel IV/Beispiel IV-1-BassSeqBank
+;
+verb 721 0.95 1 0.100681;
+sequenzer 745 120.178 35.0038 1 0.287172 4 2 C:/Users/Win7 Pro x64/Desktop/Loop-Ensemble/LoopTools/Aktuelles Set/Beispiele/Beispiel IV/Beispiel IV-1-SequenzerBank
+;
+osci 746 2 55.473 1.27 37.5557 55.7245 0.500948 63.5;
+volume 748 1 63.5;
+graindelay 1234 127 15.2939 2.34177 82.8261;
+volume 2345 1 63.5;
+volume 4756 1 63.5;

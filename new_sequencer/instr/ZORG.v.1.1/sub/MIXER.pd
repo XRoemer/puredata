@@ -1,0 +1,53 @@
+#N canvas 80 111 612 443 10;
+#X obj -21 221 line~;
+#X obj -21 178 mknob 32 32 0 1 0 1 empty empty VOLUME 5 -8 0 8 -262144
+-1 -1 1550 1;
+#X obj 27 213 rmstodb;
+#X obj 27 246 nbx 5 14 -1e+037 1e+037 0 0 empty empty dB 5 -8 0 10
+-262144 -1 -1 93.9794 256;
+#X obj -21 120 loadbang;
+#X msg -21 144 0.25;
+#X obj 246 291 line~;
+#X obj 246 248 mknob 32 32 0 1 0 1 empty empty VOLUME 5 -8 0 8 -262144
+-1 -1 1550 1;
+#X obj 294 283 rmstodb;
+#X obj 294 316 nbx 5 14 -1e+037 1e+037 0 0 empty empty dB 5 -8 0 10
+-262144 -1 -1 93.9794 256;
+#X obj 246 190 loadbang;
+#X msg 246 214 0.25;
+#X obj 128 133 mknob 40 40 0 0.5 0 0 MIXER1 MIXER1-r VCO_1_LEVEL -8
+54 0 8 -262144 -1 -1 3900 1;
+#X obj 128 203 mknob 40 40 0 0.5 0 0 MIXER2 MIXER2-r VCO_2_LEVEL -8
+54 0 8 -262144 -1 -1 3900 1;
+#X text 117 104 VCO MIXER;
+#X obj -66 253 *~;
+#X obj 200 323 *~;
+#X obj 69 -4 loadbang;
+#X msg 69 22 0.25;
+#X obj -65 18 r~ mixer1.1;
+#X obj 201 133 r~ mixer1.2;
+#X obj 200 358 *~ 1;
+#X obj 201 390 s~ filter;
+#X connect 0 0 15 1;
+#X connect 1 0 0 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 4 0 5 0;
+#X connect 5 0 1 0;
+#X connect 6 0 16 1;
+#X connect 7 0 6 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 10 0 11 0;
+#X connect 11 0 7 0;
+#X connect 12 0 1 0;
+#X connect 13 0 7 0;
+#X connect 15 0 21 0;
+#X connect 16 0 21 0;
+#X connect 17 0 18 0;
+#X connect 18 0 12 0;
+#X connect 18 0 13 0;
+#X connect 19 0 15 0;
+#X connect 20 0 16 0;
+#X connect 21 0 22 0;
+#X coords 0 -1 1 1 93 169 2 100 100;

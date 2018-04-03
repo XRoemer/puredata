@@ -1,0 +1,61 @@
+#N canvas 0 0 1423 798 10;
+#X obj 101 102 cnv 15 100 100 empty empty record 6 20 0 24 -233017
+-258113 0;
+#X obj 124 140 tgl 50 0 \$0rec \$0rec_r empty 5 -10 0 12 -99865 -260097
+-1 0 1;
+#X obj 456 358 catch~ signalleft;
+#X obj 626 359 catch~ signalright;
+#X obj 527 431 writesf~ 2;
+#X msg 574 202 start;
+#X msg 268 373 stop;
+#X obj 663 -73 sel 1;
+#X obj 268 309 sel 0;
+#X msg 661 104 open -bytes 3 \$1;
+#X obj 865 109 metro 10000;
+#X msg 807 58 1;
+#X msg 979 52 0;
+#X obj 865 141 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 865 182 f;
+#X obj 901 182 + 1;
+#X obj 971 113 pipe 10;
+#X obj 865 306 s \$0rec_r;
+#X msg 865 274 0;
+#X obj 663 73 savepanel;
+#X obj 666 2 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 582 151 del 10;
+#X obj 596 111 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 656 41 getdir;
+#X obj 865 230 sel 360;
+#X connect 1 0 8 0;
+#X connect 1 0 7 0;
+#X connect 2 0 4 0;
+#X connect 3 0 4 1;
+#X connect 5 0 4 0;
+#X connect 6 0 4 0;
+#X connect 7 0 20 0;
+#X connect 7 0 11 0;
+#X connect 8 0 6 0;
+#X connect 8 0 12 0;
+#X connect 9 0 4 0;
+#X connect 9 0 22 0;
+#X connect 10 0 13 0;
+#X connect 11 0 10 0;
+#X connect 12 0 10 0;
+#X connect 12 0 16 0;
+#X connect 13 0 14 0;
+#X connect 14 0 15 0;
+#X connect 14 0 24 0;
+#X connect 15 0 14 1;
+#X connect 16 0 14 1;
+#X connect 18 0 17 0;
+#X connect 19 0 9 0;
+#X connect 20 0 23 0;
+#X connect 21 0 5 0;
+#X connect 22 0 21 0;
+#X connect 23 0 19 0;
+#X connect 24 0 12 0;
+#X connect 24 0 18 0;
+#X coords 0 -1 1 1 102 104 1 100 100;
