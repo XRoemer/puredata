@@ -12,3 +12,5 @@ The wrapper is used for reloading the file test.lua, so changes can be reflected
 On executing the other messages, classes and functions are called and remote debugging should be started.
 
 The watch window of ZeroBrane doesn't show any entries in my case
+
+Any comments of improving this method are welcome
