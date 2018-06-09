@@ -1,13 +1,16 @@
-# Sequencer
+# Sequencer and (Midi) Editor
 
-Creates items by clicking
+Uses nw.js for the editor. nw can be downloaded from here:
+https://nwjs.io/
+It's preferable to use the sdk version to see the commands exchanged between pd and nw.
+Console can be opened by F12.
 
-Usage: Download zip of upper folder, unpack and start sequencer.pd from the folder new_sequencer
+Open sequencers_example.pd and follow the instructions. More information will be added soon.
 
-Works with Purr Data, tested on win7
+Works with Purr Data, tested on win7/win10, will work with pd vanilla soon.
  
 
-![alt tag](sequencer_gui.png)
+![alt tag](gui/sequencer.png)
 
 
 

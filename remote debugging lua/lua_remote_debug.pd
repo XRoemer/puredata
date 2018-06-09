@@ -1,0 +1,14 @@
+#N canvas 1083 75 470 355 10;
+#X obj 58 237 wrapper;
+#X obj 58 215 list;
+#X obj 58 259 print outlet;
+#X msg 58 32 dofile G:/Dropbox/lua/test.lua, f 36;
+#X msg 143 151 test fkt1 34 wer 56 7812;
+#X msg 143 173 test fkt2 toi toi toi;
+#X text 58 9 execute file;
+#X text 144 127 execute class.functions();
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 3 0 1 0;
+#X connect 4 0 1 0;
+#X connect 5 0 1 0;
